@@ -1,0 +1,677 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "INWEALTH API",
+    "description": ""
+  },
+  "host": "51.158.107.134:3000",
+  "basePath": "/inwealth",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/user/saveProfil": {
+      "post": {
+        "tags": [],
+        "description": "Profile registration",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "residenceFiscale": {
+                  "example": "france"
+                },
+                "nationalite": {
+                  "example": "france"
+                },
+                "changementResidence": {
+                  "example": "suisse"
+                },
+                "situationFamille": {
+                  "example": "marie"
+                },
+                "regimeMatrimonial": {
+                  "example": "participationAcquet"
+                },
+                "elementEtranger": {
+                  "example": "suisse"
+                },
+                "enfantMineur": {
+                  "example": 1
+                },
+                "enfantMajeur": {
+                  "example": 1
+                },
+                "enfantHandicape": {
+                  "example": false
+                },
+                "enfantPrecedentUnion": {
+                  "example": false
+                },
+                "petitEnfant": {
+                  "example": false
+                },
+                "nbrePetitEnfant": {
+                  "example": 1
+                },
+                "age": {
+                  "example": 50
+                },
+                "ageConjoint": {
+                  "example": 49
+                },
+                "niveauFortune": {
+                  "example": "entre2et5"
+                },
+                "montantTrainDeVie": {
+                  "example": 1000000
+                },
+                "revenuNetHorsImpot": {
+                  "example": 800000
+                },
+                "revenuNetImposable":{
+                  "example": 400000
+                },
+                "chargeDontImpot": {
+                  "example": 400000
+                },
+                "valorisationSteGroupe": {
+                  "example": 1000000
+                },
+                "secteurActivite": {
+                  "example": "informatique"
+                },
+                "detentionImmoExploitation": {
+                  "example": "horsSociete"
+                },
+                "groupe": {
+                  "example": true
+                },
+                "formeJuridique": {
+                  "example": "sa"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/saveInfoPat": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "residenceFiscale": {
+                  "example": "france"
+                },
+                "nationalite": {
+                  "example": "france"
+                },
+                "changementResidence": {
+                  "example": "suisse"
+                },
+                "situationFamille": {
+                  "example": "marie"
+                },
+                "regimeMatrimonial": {
+                  "example": "participationAcquet"
+                },
+                "elementEtranger": {
+                  "example": "suisse"
+                },
+                "enfantMineur": {
+                  "example": 1
+                },
+                "enfantMajeur": {
+                  "example": 1
+                },
+                "enfantHandicape": {
+                  "example": false
+                },
+                "enfantPrecedentUnion": {
+                  "example": false
+                },
+                "petitEnfant": {
+                  "example": false
+                },
+                "nbrePetitEnfant":{
+                  "example": 1
+                },
+                "age": {
+                  "example": 50
+                },
+                "ageConjoint": {
+                  "example": 49
+                },
+                "niveauFortune": {
+                  "example": "entre2et5"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/getInfoProfil/{id}": {
+      "get": {
+        "tags": [],
+        "deprecated": true,
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/getInfoUser/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Retrieving all user information",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/getChiffre/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Retrieving figures",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/listePiste/{id}": {
+      "get": {
+        "tags": [],
+        "description": "List of filtered leads",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/getPlanStrategiqueFile/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Get the generated file",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "type": "string",
+                "description": "application/pdf"
+            },
+            "Content-Disposition": {
+              "type": "string",
+              "description": "attachment; filename=\"Plan stratégique.pdf\""
+            }
+          },
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/piste/{id}": {
+      "get": {
+        "tags": [],
+        "deprecated": true,
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/updateProfil/{id}": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "residenceFiscale": {
+                  "example": "france"
+                },
+                "nationalite": {
+                  "example": "france"
+                },
+                "changementResidence": {
+                  "example": "suisse"
+                },
+                "situationFamille": {
+                  "example": "marie"
+                },
+                "regimeMatrimonial": {
+                  "example": "participationAcquet"
+                },
+                "elementEtranger": {
+                  "example": "suisse"
+                },
+                "enfantMineur": {
+                  "example": 1
+                },
+                "enfantMajeur": {
+                  "example": 1
+                },
+                "enfantHandicape": {
+                  "example": false
+                },
+                "enfantPrecedentUnion": {
+                  "example": false
+                },
+                "petitEnfant": {
+                  "example": false
+                },
+                "nbrePetitEnfant": {
+                  "example": 1
+                },
+                "age": {
+                  "example": 50
+                },
+                "ageConjoint": {
+                  "example": 49
+                },
+                "niveauFortune": {
+                  "example": "entre2et5"
+                },
+                "montantTrainDeVie": {
+                  "example": 1000000
+                },
+                "revenuNetHorsImpot": {
+                  "example": 800000
+                },
+                "revenuNetImposable":{
+                  "example": 400000
+                },
+                "chargeDontImpot": {
+                  "example": 400000
+                },
+                "valorisationSteGroupe": {
+                  "example": 1000000
+                },
+                "secteurActivite": {
+                  "example": "informatique"
+                },
+                "detentionImmoExploitation": {
+                  "example": "horsSociete"
+                },
+                "groupe": {
+                  "example": true
+                },
+                "formeJuridique": {
+                  "example": "sa"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/elementEtranger/{id}": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "elementEtranger": {
+                  "example": "suisse"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/update/{id}": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/getSituation": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/parcours/save/{id}": {
+      "post": {
+        "tags": [],
+        "description": "Route recording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "typeParcours": {
+                  "example": "cederEntreprise"
+                },
+                "horizon": {
+                  "example": "entre1et3"
+                },
+                "etapeParcours": {
+                  "example": "reflexion"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/parcours/getParcours/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/parcours/getAll": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/parcours/updateParcours/{id}": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/parcours/deleteParcours/{id}": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/savePiste/{id}": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pisteReflexion": {
+                  "example": ["garantieActifPassif","apportSciIrSciIs"]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/getPiste/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/deletePiste/{id}": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

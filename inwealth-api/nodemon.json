@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "ignore": ["*.test.js",".git","node_modules/**/node_modules","./**/*.pdf"],
+  "ext": "js,json,jsx"
+}

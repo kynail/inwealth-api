@@ -1,0 +1,112 @@
+{
+  "nlleActivite": {
+    "title":
+    "Apporter vos titres à une société pour démarrer une nouvelle activité",
+    "objectif": "PRÉPARER LA SOCIÉTÉ À LA TRANSMISSION",
+    "pages": [20, 21, 22, 23]
+  },
+  "garantieActifPassif": {
+    "title": "Rédiger la clause de garantie d'actif passif",
+    "objectif": "PRÉPARER LA SOCIÉTÉ À LA TRANSMISSION",
+    "pages": [24]
+  },
+  "ipvFiscalite": {
+    "title": "Céder les titres de PME de moins de 10 ans",
+    "objectif": "MAITRISER VOTRE IMPOSITION",
+    "pages": [25, 26]
+  },
+  "assuranceVie": {
+    "title": "Souscrire un contrat d'assurance vie pour protéger vos proches",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [27, 58]
+  },
+  "assVieAvant70Cte": {
+    "title": "Souscrire un contrat d'assurance-vie pour protéger vos proches",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [27, 59]
+  },
+  "assVieAvant70Sdb": {
+    "title": "Souscrire un contrat d'assurance-vie pour protéger vos proches",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [27, 60]
+  },
+  "inconnu1": {
+    "title": "Effectuer des rachats périodiques sur un contrat d'assurance vie",
+    "objectif": "MAINTENIR VOTRE CONFORT DE VIE",
+    "pages": [28, 29, 30]
+  },
+  "assVieIr": {
+    "title":
+    "Souscrire un contrat d'assurance-vie pour maitriser votre fiscalité",
+    "objectif": "MAITRISER VOTRE IMPOSITION",
+    "pages": []
+  },
+  "donationAvantCessionEnfant": {
+    "title": "Donner aux enfants des titres avant leur cession",
+    "objectif": "TRANSMETTRE À VOS PROCHES",
+    "pages": [40, 41, 42, 43, 44]
+  },
+  "fboImmoEntreprise": {
+    "title": "Céder l'immobilier d'entreprise à une SCI familiale",
+    "objectif": "TRANSMETTRE À VOS PROCHES",
+    "pages": [45, 46, 47, 48, 49]
+  },
+  "paiementDiffere": {
+    "title": "Acquitter les droits de donation en différé et fractionné",
+    "objectif": "DIFFERER VOTRE IMPOSITION",
+    "pages": [50]
+  },
+  "remploiPdtCessionScpCapi": {
+    "title":
+    "Souscrire un contrat de capitalisation : remploi du produit de cession démembré",
+    "objectif": "INVESTIR LE PRODUIT DE CESSION",
+    "pages": [51]
+  },
+  "dutreil": {
+    "title":
+    "Conclure un Pacte Dutreil : 75% d'abattement sur l'assiette taxable",
+    "objectif": "PRÉPARER LA SOCIÉTÉ À LA TRANSMISSION",
+    "pages": [52, 53, 54]
+  },
+  "donationPpConjoint": {
+    "title": "Donner au conjoint des titres avant leur cession",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [55, 56]
+  },
+  "ddv": {
+    "title":
+    "Augmenter les droits du conjoint dans la succession : la donation au dernier vivant",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [57]
+  },
+  "devPatImmoEndettement": {
+    "title": "Acquérir un bien immobilier locatif",
+    "objectif": "DÉVELOPPER VOTRE PATRIMOINE PRIVÉ",
+    "pages": [61, 62, 63]
+  },
+  "pacs": {
+    "title": "Conclure un pacs",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [64]
+  },
+  "simplificationGroupe": {
+    "title": "Simplifier l'organigramme du groupe",
+    "objectif": "PRÉPARER LA SOCIÉTÉ À LA TRANSMISSION",
+    "pages": [65, 66]
+  },
+  "donationPetitEnfant": {
+    "title": "Donner en faveur de vos petits-enfants",
+    "objectif": "TRANSMETTRE À VOS PROCHES",
+    "pages": [67, 68]
+  },
+  "fboImmo": {
+    "title": "Céder l'immobilier locatif à une SCI familiale",
+    "objectif": "DÉVELOPPER VOTRE PATRIMOINE PRIVÉ",
+    "pages": [69, 70, 71]
+  },
+  "steAcquet": {
+    "title": "Aménager votre régime séparatiste : la clause de société acquêts",
+    "objectif": "PROTÉGER VOS PROCHES",
+    "pages": [72]
+  }
+}

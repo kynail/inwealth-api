@@ -1,0 +1,36 @@
+version: '3.0'
+services:
+  inwealth-api:
+    build: ./inwealth-api
+    image: inwealth-api
+    container_name: inwealth-api
+    restart: unless-stopped
+    volumes:
+      - ./inwealth-api:/app
+      -  inwealth-back_node-modules:/app/node_modules
+      - node14-alpine_npm-cache:/root/.npm
+    ports:
+      - "3000:3000"
+    networks:
+      - inwealth-dev
+
+  nginx:
+    build: ./nginx
+    image: inwealth-nginx
+    container_name: inwealth-nginx
+    restart: unless-stopped
+    depends_on:
+      - inwealth-api
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - inwealth-dev
+
+networks:
+  inwealth-dev:
+    driver: bridge
+
+volumes:
+  inwealth-back_node-modules:
+  node14-alpine_npm-cache:
