@@ -16,16 +16,16 @@ services:
 
   nginx:
     build: ./nginx
-    image: inwlth-nginx
-    container_name: inwlth-nginx
+    image: inwealth-nginx
+    container_name: inwealth-nginx
     restart: unless-stopped
     depends_on:
-      - inwlth-api
+      - inwealth-api
     ports:
       - "80:80"
       - "443:443"
     networks:
-      - inwlth-dev
+      - inwealth-dev
 
 networks:
   inwealth-dev:
