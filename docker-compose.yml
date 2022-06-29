@@ -3,7 +3,7 @@ services:
   inwealth-api:
     build: ./inwealth-api
     image: inwealth-api
-    container_name: inwealth-api
+    container_name: inwealth-api2
     restart: unless-stopped
     volumes:
       - ./inwealth-api:/app
