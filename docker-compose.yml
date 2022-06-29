@@ -17,7 +17,7 @@ services:
   nginx:
     build: ./nginx
     image: inwealth-nginx
-    container_name: inwealth-nginx
+    container_name: inwealth-nginx2
     restart: unless-stopped
     depends_on:
       - inwealth-api
