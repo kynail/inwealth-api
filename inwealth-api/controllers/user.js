@@ -443,6 +443,7 @@ exports.profilUser = (req, res) => {
     age: req.body.age,
     ageConjoint: req.body.ageConjoint,
     niveauFortune: req.body.niveauFortune,
+    locality: req.body.locality,
   }
 
   User.create(user)

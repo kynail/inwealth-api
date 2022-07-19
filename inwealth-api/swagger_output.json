@@ -600,7 +600,7 @@
         }
       }
     },
-    "/savePiste/{id}": {
+    "piste/savePiste/{id}": {
       "post": {
         "tags": [],
         "description": "",
@@ -634,7 +634,7 @@
         }
       }
     },
-    "/getPiste/{id}": {
+    "piste/getPiste/{id}": {
       "get": {
         "tags": [],
         "description": "",
@@ -653,7 +653,7 @@
         }
       }
     },
-    "/deletePiste/{id}": {
+    "piste/deletePiste/{id}": {
       "delete": {
         "tags": [],
         "description": "",
