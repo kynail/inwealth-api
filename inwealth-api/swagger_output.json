@@ -671,7 +671,47 @@
           }
         }
       }
-    }
+    },
+    "france/saveProject": {
+      "post": {
+        "tags": [],
+        "description": "Projet recording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cederEntreprise": {
+                  "example": "true"
+                },
+                "transEntreprise": {
+                  "example": "true"
+                },
+                "maitriserImpot": {
+                  "example": "true"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }    
   },
   "definitions": {}
 }
