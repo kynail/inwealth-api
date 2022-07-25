@@ -28,18 +28,49 @@ exports.saveProject = (req, res) => {
     transmettreEntreprise: req.body.transmettreEntreprise,
     maitriserImpot: req.body.maitriserImpot,
   }
-  France.create(projet)
-    .then(() => {
-      // const france = {
-
-      // }
-
-      res.status(200).send(dataUser)
+  France.findOne({
+    where: { id: req.params.id },
+  })
+    .then((dataFrance) => {
+      if (!dataFrance) {
+        France.create(france)
+          .then((data) => {
+            res.status(200).send({ data })
+          })
+          .catch((err) => {
+            res.status(500).send({
+              message:
+                err.message ||
+                'Some error occurred while creating the parcours.',
+            })
+          })
+      } else {
+        France.update(france, {
+          where: { id: req.params.id },
+        })
+          .then((num) => {
+            if (num == 1) {
+              res.send({
+                message: 'Projects was updated successfully.',
+              })
+            } else {
+              res.send({
+                message: `Cannot update Projects with id=${req.params.id}. Maybe Projects was not found or req.body is empty!`,
+              })
+            }
+          })
+          .catch((err) => {
+            console.log(err)
+            res.status(500).send({
+              message: 'Error updating Projects with id=' + req.params.id,
+            })
+          })
+      }
     })
     .catch((err) => {
+      console.log(err)
       res.status(500).send({
-        message:
-          err.message || 'Some error occurred while creating the data pro.',
+        message: 'Could not find Projects with userId=' + id,
       })
     })
 }
