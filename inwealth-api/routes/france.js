@@ -9,5 +9,5 @@ module.exports = (app) => {
 
   router.put('/addProjet/:id', franceCtrl.updatePat)
 
-  app.use('/inwealth/user', router)
+  app.use('/inwealth/france', router)
 }
