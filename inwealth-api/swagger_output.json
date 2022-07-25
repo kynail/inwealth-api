@@ -600,7 +600,7 @@
         }
       }
     },
-    "piste/savePiste/{id}": {
+    "/piste/savePiste/{id}": {
       "post": {
         "tags": [],
         "description": "",
@@ -634,7 +634,7 @@
         }
       }
     },
-    "piste/getPiste/{id}": {
+    "/piste/getPiste/{id}": {
       "get": {
         "tags": [],
         "description": "",
@@ -653,7 +653,7 @@
         }
       }
     },
-    "piste/deletePiste/{id}": {
+    "/piste/deletePiste/{id}": {
       "delete": {
         "tags": [],
         "description": "",
@@ -672,7 +672,7 @@
         }
       }
     },
-    "france/saveProject/{id}": {
+    "/france/saveProject/{id}": {
       "post": {
         "tags": [],
         "description": "Projet recording",
