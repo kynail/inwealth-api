@@ -10,7 +10,6 @@ module.exports = (sequelize) => {
       type: DataTypes.BOOLEAN,
     },
     transmettreEntreprise: {
-      //$classParcours.horizon
       type: DataTypes.BOOLEAN,
     },
     matriserImpot: {
