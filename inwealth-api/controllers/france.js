@@ -22,7 +22,7 @@ const Piste = db.Piste
 const France = db.France
 
 exports.saveProject = (req, res) => {
-  const projet = {
+  const france = {
     id: req.body.id,
     cederEntreprise: req.body.cederEntreprise,
     transmettreEntreprise: req.body.transmettreEntreprise,
@@ -30,6 +30,10 @@ exports.saveProject = (req, res) => {
   }
   France.create(projet)
     .then(() => {
+      // const france = {
+
+      // }
+
       res.status(200).send(dataUser)
     })
     .catch((err) => {

@@ -637,7 +637,7 @@
         }
       }
     },
-    "france/saveProject": {
+    "france/saveProject/{id}": {
       "post": {
         "tags": [],
         "description": "Projet recording",
