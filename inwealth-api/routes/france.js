@@ -3,7 +3,7 @@ const router = express.Router()
 const franceCtrl = require('../controllers/france')
 
 module.exports = (app) => {
-  router.post('/saveProject', franceCtrl.saveProject)
+  router.post('/saveProject/:id', franceCtrl.saveProject)
 
   router.get('/getInfoProjet/:id', franceCtrl.infoProfil)
 
