@@ -37,7 +37,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 require('./routes/user')(app)
 
 require('./routes/professionnel')(app)
-require('./routes/france')(app)
+
+require('./routes/france')(app) // ici
+
 require('./routes/parcours')(app)
 
 require('./routes/piste')(app)
