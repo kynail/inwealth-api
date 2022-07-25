@@ -1,18 +1,21 @@
 const { DataTypes } = require('sequelize')
 module.exports = (sequelize) => {
   return sequelize.define('parcours', {
-    id: {
-      primaryKey: true,
-      type: sequelize.UUID,
-      defaultValue: sequelize.UUIDV1,
+    typeParcours: {
+      //$classParcours.typeParcours
+      type: DataTypes.STRING,
     },
-    cederEntreprise: {
-      type: DataTypes.BOOLEAN,
+    etapeParcours: {
+      type: DataTypes.STRING,
     },
-    transmettreEntreprise: {
-      type: DataTypes.BOOLEAN,
+    horizon: {
+      //$classParcours.horizon
+      type: DataTypes.STRING,
     },
-    matriserImpot: {
+    pisteReflexion: {
+      type: DataTypes.STRING,
+    },
+    valeurPisteReflexion: {
       type: DataTypes.BOOLEAN,
     },
   })
