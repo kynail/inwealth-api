@@ -21,7 +21,7 @@ const Parcours = db.Parcours
 const Piste = db.Piste
 const France = db.France
 
-console.log(db.France)
+console.log("testestest TESTESTEST " + db.France)
 exports.saveProject = (req, res) => {
   const france = {
     id: req.body.id,
