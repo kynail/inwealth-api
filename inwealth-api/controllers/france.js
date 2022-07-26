@@ -24,7 +24,7 @@ const France = db.France
 console.log("testestest TESTESTEST " + db.France)
 exports.saveProject = (req, res) => {
   const france = {
-    id: req.body.id,
+    id: dataUser.id,
     cederEntreprise: req.body.cederEntreprise,
     transmettreEntreprise: req.body.transmettreEntreprise,
     maitriserImpot: req.body.maitriserImpot,

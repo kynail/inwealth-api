@@ -15,6 +15,7 @@ const { pistePetitsEnfants } = require('../pistes/pistePetitsEnfants')
 const { pisteRegimeMat } = require('../pistes/pisteRegimeMat')
 const { pisteSituation } = require('../pistes/pisteSituation')
 const { pisteAssVie } = require('../pistes/pisteAssVie')
+const { France } = require('../models')
 const User = db.User
 const Finance = db.Finance
 const Professionnel = db.Professionnel
@@ -469,6 +470,22 @@ exports.profilUser = (req, res) => {
             .then(() => {
               // res.status(200).send({dataUser, dataFinance, dataPro});
               res.status(200).send(dataUser)
+            })
+            .then(() => {
+              const france = {
+                id: dataUser.id,
+                // cederEntreprise: req.body.cederEntreprise,
+                // transmettreEntreprise: req.body.transmettreEntreprise,
+                // maitriserImpot: req.body.maitriserImpot,
+              }
+              France.create(france)
+              .catch((err) => {
+                res.status(500).send({
+                  message:
+                    err.message ||
+                    'Some error occurred while creating the parcours.',
+                })
+              })
             })
             .catch((err) => {
               res.status(500).send({
