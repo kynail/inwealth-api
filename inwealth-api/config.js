@@ -6,7 +6,7 @@ module.exports = {
   // PASSWORD: "diris2021",
   // DB: "inwealth",
   HOST: '51.158.107.20',
-  USER: 'postgres',
+  USER: 'inwealth',
   PASSWORD: 'Postgres1!',
   DB: 'inwealth',
   PORT: 26809,
