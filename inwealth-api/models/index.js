@@ -32,10 +32,10 @@ db.Finance.belongsTo(db.User, {
   as: 'user',
 })
 
-db.France.belongsTo(db.User, {
-  foreignKey: 'userId',
-  as: 'user',
-})
+// db.France.belongsTo(db.User, {
+//   foreignKey: 'userId',
+//   as: 'user',
+// })
 
 db.Professionnel.belongsTo(db.User, {
   foreignKey: 'userId',
