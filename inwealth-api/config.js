@@ -6,7 +6,7 @@ module.exports = {
   // PASSWORD: "diris2021",
   // DB: "inwealth",
   HOST: '51.159.11.20',
-  USER: 'inwealth',
+  USER: 'postgres',
   PASSWORD: 'Postgres1!',
   DB: 'inwealth',
   PORT: 26809,
@@ -26,4 +26,3 @@ module.exports = {
   generatedFileName: 'Plan stratégique.pdf',
   // generatedFileName: 'profil.pdf',
 }
-
