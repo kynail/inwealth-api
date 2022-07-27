@@ -9,7 +9,7 @@ module.exports = {
   USER: 'postgres',
   PASSWORD: 'postgres',
   DB: 'inwealth',
-  PORT: 11223,
+  PORT: 5432,
   dialect: 'postgres',
   pool: {
     max: 5,
