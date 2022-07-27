@@ -4,10 +4,10 @@ const dbConfig = require('../config')
 const sequelize = new Sequelize(
   dbConfig.DB,
   dbConfig.USER,
-  dbConfig.PORT,
   dbConfig.PASSWORD,
   {
     host: dbConfig.HOST,
+    port: dbConfig.PORT,
     dialect: dbConfig.dialect,
   },
 )
