@@ -21,6 +21,7 @@ const Finance = db.Finance
 const Professionnel = db.Professionnel
 const Parcours = db.Parcours
 const Piste = db.Piste
+const France = db.France
 
 const listePisteSansCondition = [
   // new pisteSansConditions("lbo", "", true, true, true, true, false, false, true),
