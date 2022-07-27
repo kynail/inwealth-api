@@ -2,15 +2,6 @@ const db = require('../models')
 const France = db.France
 
 console.log("testestest TESTESTEST " + db.France)
-exports.saveProject = (req, res) => {
-  const france = {
-    id: req.params.id,
-    cederEntreprise: req.body.cederEntreprise,
-    transmettreEntreprise: req.body.transmettreEntreprise,
-    maitriserImpot: req.body.maitriserImpot,
-  }
-}
-
 
 exports.saveProject = (req, res) => {
   const france = {
@@ -62,7 +53,7 @@ exports.saveProject = (req, res) => {
     .catch((err) => {
       console.log(err)
       res.status(500).send({
-        message: 'Could not find france with userId=' + req.params.id,
+        message: 'Could not find france with userId=' + id,
       })
     })
 }
