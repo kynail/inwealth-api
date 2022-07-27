@@ -472,29 +472,29 @@ exports.profilUser = (req, res) => {
               // res.status(200).send({dataUser, dataFinance, dataPro});
               res.status(200).send(dataUser)
             })
-            .then(() => {
-              const france = {
-                id: dataUser.id,
-                // cederEntreprise: req.body.cederEntreprise,
-                // transmettreEntreprise: req.body.transmettreEntreprise,
-                // maitriserImpot: req.body.maitriserImpot,
-              }
-              France.create(france)
-              .catch((err) => {
-                res.status(500).send({
-                  message:
-                    err.message ||
-                    'Some error occurred while creating the parcours.',
-                })
-              })
-            })
-            .catch((err) => {
-              res.status(500).send({
-                message:
-                  err.message ||
-                  'Some error occurred while creating the data pro.',
-              })
-            })
+            // .then(() => {
+            //   const france = {
+            //     id: dataUser.id,
+            //     // cederEntreprise: req.body.cederEntreprise,
+            //     // transmettreEntreprise: req.body.transmettreEntreprise,
+            //     // maitriserImpot: req.body.maitriserImpot,
+            //   }
+            //   France.create(france)
+            //   .catch((err) => {
+            //     res.status(500).send({
+            //       message:
+            //         err.message ||
+            //         'Some error occurred while creating the parcours.',
+            //     })
+            //   })
+            // })
+            // .catch((err) => {
+            //   res.status(500).send({
+            //     message:
+            //       err.message ||
+            //       'Some error occurred while creating the data pro.',
+            //   })
+            // })
         })
         .catch((err) => {
           res.status(500).send({
