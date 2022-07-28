@@ -5,7 +5,7 @@ console.log("testestest TESTESTEST " + db.France)
 
 exports.saveProject = (req, res) => {
   const france = {
-    id: req.params.id,
+    userId: req.params.id,
     cederEntreprise: req.body.cederEntreprise,
     transmettreEntreprise: req.body.transmettreEntreprise,
     maitriserImpot: req.body.maitriserImpot,
