@@ -6,6 +6,7 @@ module.exports = (sequelize) => {
     //   type: sequelize.UUID,
     //   defaultValue: sequelize.UUIDV1,
     // },
+    
     cederEntreprise: {
       type: DataTypes.BOOLEAN,
     },
