@@ -657,7 +657,7 @@
                 "cederEntreprise": {
                   "example": "true"
                 },
-                "transEntreprise": {
+                "transmettreEntreprise": {
                   "example": "true"
                 },
                 "maitriserImpot": {
