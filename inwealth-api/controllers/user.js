@@ -477,7 +477,6 @@ exports.profilUser = (req, res) => {
                 id: dataUser.id,
                 // cederEntreprise: req.body.cederEntreprise,
                 // transmettreEntreprise: req.body.transmettreEntreprise,
-                // maitriserImpot: req.body.maitriserImpot,
               }
               France.create(france)
               .catch((err) => {

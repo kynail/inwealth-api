@@ -53,7 +53,7 @@ exports.saveProject = (req, res) => {
     .catch((err) => {
       console.log(err)
       res.status(500).send({
-        message: 'Could not find france with userId=' + id,
+        message: 'Could not find france with userId=' + req.params.id,
       })
     })
 }
