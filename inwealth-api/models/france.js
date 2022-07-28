@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize')
 module.exports = (sequelize) => {
-  return sequelize.define('frances', {
+  return sequelize.define('france', {
     // id: {
     //   primaryKey: true,
     //   type: sequelize.UUID,
@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
     transmettreEntreprise: {
       type: DataTypes.BOOLEAN,
     },
-    maitriserImpot: {
+    matriserImpot: {
       type: DataTypes.BOOLEAN,
     },
   })
