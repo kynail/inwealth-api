@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
     transmettreEntreprise: {
       type: DataTypes.BOOLEAN,
     },
-    matriserImpot: {
+    maitriserImpot: {
       type: DataTypes.BOOLEAN,
     },
   })

@@ -695,7 +695,7 @@
                 "transmettreEntreprise": {
                   "example": "true"
                 },
-                "matriserImpot": {
+                "maitriserImpot": {
                   "example": "true"
                 }
               }
