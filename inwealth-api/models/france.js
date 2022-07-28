@@ -6,14 +6,14 @@ module.exports = (sequelize) => {
     //   type: sequelize.UUID,
     //   defaultValue: sequelize.UUIDV1,
     // },
-    
+
     cederEntreprise: {
       type: DataTypes.BOOLEAN,
     },
     transmettreEntreprise: {
       type: DataTypes.BOOLEAN,
     },
-    maitriserImpot: {
+    matriserImpot: {
       type: DataTypes.BOOLEAN,
     },
   })

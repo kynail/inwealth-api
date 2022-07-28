@@ -8,7 +8,7 @@ exports.saveProject = (req, res) => {
     userId: req.params.id,
     cederEntreprise: req.body.cederEntreprise,
     transmettreEntreprise: req.body.transmettreEntreprise,
-    maitriserImpot: req.body.maitriserImpot,
+    matriserImpot: req.body.matriserImpot,
   }
 
   France.findOne({
