@@ -676,7 +676,26 @@
           }
         }
       }
-    }  
+    },
+    "/france/getInfoProject/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
   },
   "definitions": {}
 }
