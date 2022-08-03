@@ -1,7 +1,7 @@
 const db = require('../models')
 const France = db.France
 
-console.log("testestest TESTESTEST " + req.body.cederEntreprise)
+// console.log("testestest TESTESTEST " + req.body.cederEntreprise)
 
 exports.saveProject = (req, res) => {
   const france = {
