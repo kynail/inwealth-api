@@ -58,7 +58,7 @@ exports.saveProject = (req, res) => {
     })
 }
 
-exports.getInfoProject = (req, res) => {
+exports.getInfoProjet = (req, res) => {
   const id = req.params.id
 
   Parcours.findOne({
