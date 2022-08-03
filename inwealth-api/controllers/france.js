@@ -1,7 +1,7 @@
 const db = require('../models')
 const France = db.France
 
-console.log("testestest TESTESTEST " + db.France)
+console.log("testestest TESTESTEST " + req.body.cederEntreprise)
 
 exports.saveProject = (req, res) => {
   const france = {
@@ -54,6 +54,24 @@ exports.saveProject = (req, res) => {
       console.log(err)
       res.status(500).send({
         message: 'Could not find france with userId=' + req.params.id,
+      })
+    })
+}
+
+exports.getInfoProject = (req, res) => {
+  const id = req.params.id
+
+  Parcours.findOne({
+    where: { userId: id },
+  })
+    .then((parcours) => {
+      console.log(parcours)
+      res.status(200).send(parcours)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(500).send({
+        message: 'Could not find Parcours with userId=' + id,
       })
     })
 }
