@@ -61,17 +61,17 @@ exports.saveProject = (req, res) => {
 exports.getInfoProjet = (req, res) => {
   const id = req.params.id
 
-  Parcours.findOne({
+  France.findOne({
     where: { userId: id },
   })
-    .then((parcours) => {
-      console.log(parcours)
-      res.status(200).send(parcours)
+    .then((france) => {
+      console.log(france)
+      res.status(200).send(france)
     })
     .catch((err) => {
       console.log(err)
       res.status(500).send({
-        message: 'Could not find Parcours with userId=' + id,
+        message: 'Could not find france with userId=' + id,
       })
     })
 }
