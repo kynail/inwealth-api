@@ -712,7 +712,7 @@
         }
       }
     },
-    "/france/getInfoProject/{id}": {
+    "/france/getInfoProjet/{id}": {
       "get": {
         "tags": [],
         "description": "",
