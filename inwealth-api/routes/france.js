@@ -5,7 +5,7 @@ const franceCtrl = require('../controllers/france')
 module.exports = (app) => {
   router.post('/saveProject/:id', franceCtrl.saveProject)
 
-  router.get('/getInfoProjet/:id', franceCtrl.infoProject)
+  router.get('/getInfoProjet/:id', franceCtrl.getInfoProject)
 
   // router.put('/addProjet/:id', franceCtrl.updatePat)
 
