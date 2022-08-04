@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const franceCtrl = require('../controllers/meeting')
+const meetingCtrl = require('../controllers/meeting')
 
 module.exports = (app) => {
   router.post('/saveMeeting/:id', meetingCtrl.saveMeeting)
