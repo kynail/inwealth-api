@@ -3,7 +3,7 @@ const Meeting = db.Meeting
 
 // console.log("testestest TESTESTEST " + req.body.cederEntreprise)
 
-exports.saveProject = (req, res) => {
+exports.saveMeeting = (req, res) => {
   const meeting = {
     userId: req.params.id,
     meeting: req.body.meeting,
@@ -56,7 +56,7 @@ exports.saveProject = (req, res) => {
     })
 }
 
-exports.getInfoProjet = (req, res) => {
+exports.getMeeting = (req, res) => {
   const id = req.params.id
 
   France.findOne({
