@@ -59,7 +59,7 @@ exports.saveMeeting = (req, res) => {
 exports.getMeeting = (req, res) => {
   const id = req.params.id
 
-  France.findOne({
+  Meeting.findOne({
     where: { userId: id },
   })
     .then((meeting) => {
