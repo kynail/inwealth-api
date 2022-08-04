@@ -23,6 +23,7 @@ db.Professionnel = require('./Professionnel')(sequelize, Sequelize)
 db.Parcours = require('./Parcours')(sequelize, Sequelize)
 db.Piste = require('./Piste')(sequelize, Sequelize)
 db.France = require('./France')(sequelize, Sequelize)
+db.Meeting = require('./Meeting')(sequelize, Sequelize)
 // db.User.hasOne(db.Professionnel, { as: "professionnel" });
 // db.User.hasOne(db.Finance, { as: "finance" });
 // db.User.hasOne(db.Parcours, { as: "parcours" });
@@ -33,6 +34,11 @@ db.Finance.belongsTo(db.User, {
 })
 
 db.France.belongsTo(db.User, {
+  foreignKey: 'userId',
+  as: 'user',
+})
+
+db.Meeting.belongsTo(db.User, {
   foreignKey: 'userId',
   as: 'user',
 })

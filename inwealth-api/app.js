@@ -40,6 +40,8 @@ require('./routes/professionnel')(app)
 
 require('./routes/france')(app)
 
+require('./routes/meeting')(app)
+
 require('./routes/parcours')(app)
 
 require('./routes/piste')(app)
