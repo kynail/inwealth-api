@@ -6,7 +6,9 @@ const Login = db.Login
 exports.saveLogin = (req, res) => {
   const login = {
     userId: req.params.id,
-    login: req.body.login,
+    phone: req.body.phone,
+    indic: req.body.indic,
+    mdp: req.body.mdp,
   }
 
   Login.findOne({

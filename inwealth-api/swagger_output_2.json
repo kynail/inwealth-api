@@ -748,6 +748,66 @@
           }
         }
       }
+    },
+
+    "/login/saveLogin/{id}": {
+      "post": {
+        "tags": [],
+        "description": "Projet recording",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "phone": {
+                  "example": "07 88 98 00 40"
+                },
+                "indic": {
+                  "example": "+33 "
+                },
+                "mdp": {
+                  "example": "dfdsfsdgsdgsgrgdfdfgdf"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/login/getLogin/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "definitions": {}
