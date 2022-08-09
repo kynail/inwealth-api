@@ -42,9 +42,12 @@ require('./routes/france')(app)
 
 require('./routes/meeting')(app)
 
+require('./routes/login')(app)
+
 require('./routes/parcours')(app)
 
 require('./routes/piste')(app)
+
 require('./routes/videos')(app)
 
 module.exports = app
