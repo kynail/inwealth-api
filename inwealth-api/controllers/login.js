@@ -9,6 +9,7 @@ exports.saveLogin = (req, res) => {
     phone: req.body.phone,
     indic: req.body.indic,
     mdp: req.body.mdp,
+    iflog: req.body.iflog
   }
 
   Login.findOne({

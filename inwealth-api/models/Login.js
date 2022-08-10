@@ -10,5 +10,8 @@ module.exports = (sequelize) => {
     mdp: {
       type: DataTypes.STRING,
     },
+    iflog: {
+      type: DataTypes.BOOLEAN,
+    }
   })
 }
