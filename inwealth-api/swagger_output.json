@@ -96,6 +96,9 @@
                 },
                 "formeJuridique": {
                   "example": "sa"
+                },
+                "canton": {
+                  "exemple": "Genéve"
                 }
               }
             }
