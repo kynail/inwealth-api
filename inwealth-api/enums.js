@@ -28,6 +28,35 @@ exports.paysEnum = {
   portugal: 'Portugal',
 }
 
+exports.cantonEnum = {
+  appe: "Appenzell Rhodes-Extérieures",
+  appi: "Appenzell Rhodes-Intérieures",
+  ar: "argovie",
+  bac: "Bâle-Campagne",
+  bav: "Bâle-Ville",
+  be: "Berne",
+  fr: "Fribourg",
+  ge: "Genéve",
+  gl: "GLaris",
+  gr: "Grisons",
+  ju: "Jura",
+  lu: "Lucerne",
+  ne: "Neuchâtel",
+  ni: "Nidwald",
+  ob: "Obwald",
+  sa: "Saint-Gall",
+  sc: "Schaffhouse",
+  sch: "Scwytz",
+  so: "Soleure",
+  te: "Tessin",
+  th: "Thurgovie",
+  ur: "Uri",
+  va: "Valais",
+  vau: "Vaud",
+  zo: "Zoug",
+  zu: "Zurich"
+}
+
 exports.nationaliteEnum = {
   france: 'France', // "Vous êtes de nationalité : France"
   suisse: 'Suisse',
