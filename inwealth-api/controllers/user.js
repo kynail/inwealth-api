@@ -431,6 +431,7 @@ const listePisteAssVie = [
 exports.profilUser = (req, res) => {
   const user = {
     residenceFiscale: req.body.residenceFiscale,
+    canton: req.body.canton,
     nationalite: req.body.nationalite,
     changementResidence: req.body.changementResidence,
     situationFamille: req.body.situationFamille,

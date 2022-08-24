@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
     residenceFiscale: {
       type: Sequelize.STRING,
     },
+    canton: {
+      type: Sequelize.STRING,
+    },
     nationalite: {
       //$classUser.residenceFiscale
       type: Sequelize.STRING,
