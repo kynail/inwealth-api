@@ -31,6 +31,9 @@
                 "nationalite": {
                   "example": "any"
                 },
+                "canton": {
+                  "exemple": "aaaaaaaaah"
+                },
                 "changementResidence": {
                   "example": "any"
                 },
@@ -96,9 +99,6 @@
                 },
                 "formeJuridique": {
                   "example": "any"
-                },
-                "canton": {
-                  "exemple": "geneve"
                 }
               }
             }
