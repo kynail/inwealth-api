@@ -431,8 +431,8 @@ const listePisteAssVie = [
 exports.profilUser = (req, res) => {
   const user = {
     residenceFiscale: req.body.residenceFiscale,
-    canton: req.body.canton,
     nationalite: req.body.nationalite,
+    canton: req.body.canton,
     changementResidence: req.body.changementResidence,
     situationFamille: req.body.situationFamille,
     regimeMatrimonial: req.body.regimeMatrimonial,
@@ -515,6 +515,7 @@ exports.updateProfilUser = (req, res) => {
   const user = {
     residenceFiscale: req.body.residenceFiscale,
     nationalite: req.body.nationalite,
+    canton: req.body.canton,
     changementResidence: req.body.changementResidence,
     situationFamille: req.body.situationFamille,
     regimeMatrimonial: req.body.regimeMatrimonial,
@@ -784,6 +785,7 @@ exports.getAllInfoUser = (req, res) => {
             .then((parcours) => {
               profil.residenceFiscale = data.user.residenceFiscale
               profil.nationalite = data.user.nationalite
+              profil.canton = data.user.canton
               profil.changementResidence = data.user.changementResidence
               profil.situationFamille = data.user.situationFamille
               profil.regimeMatrimonial = data.user.regimeMatrimonial
