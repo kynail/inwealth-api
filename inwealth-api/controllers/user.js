@@ -448,7 +448,7 @@ exports.profilUser = (req, res) => {
     niveauFortune: req.body.niveauFortune,
     locality: req.body.locality,
   }
-  print("OKAAAAAAAAAAAY  ", canton),
+  // print("OKAAAAAAAAAAAY  ", canton),
   User.create(user)
     .then((dataUser) => {
       const finance = {
