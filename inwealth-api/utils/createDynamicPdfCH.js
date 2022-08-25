@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TempalteInwCh.pdf' // renommer le document TemplateInw Vs TempalteInw
+const templatePath = pdfDir + '/TemplateInwCh.pdf' // renommer le document TemplateInw Vs TempalteInw
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -24,7 +24,7 @@ const { paysEnum } = require('../enums')
 const { nationaliteEnum } = require('../enums')
 const imagePath = path.join(__dirname, '../static/images')
 
-const createDynamicPdfCH = async ({ userID, data, piste }) => {
+const createDynamicPdf = async ({ userID, data, piste }) => {
   try {
     const profilePdfPath = await createProfilePdf({ userID, data })
     const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
@@ -57,7 +57,7 @@ const createProfilePdf = async ({ userID, data }) => {
   }
 
   const merger = new PDFMerger()
-  await merger.add(templatePath, '1 to 6') // 1 to 6 Vs 5 to 10
+  await merger.add(templatePath, '1 to 6')
   await merger.save(outputPath)
   let pdfDoc = await new HummusRecipe(outputPath, outputPath)
   let yLine = 160
@@ -66,7 +66,7 @@ const createProfilePdf = async ({ userID, data }) => {
   // Familiale et patrimoniale
 
   pdfDoc
-    .editPage(4) // ok puisque l'on reprend la pagination à compter de la page de couverture
+    .editPage(4)
     .rectangle(265, 160, 675, 308, { fill: '#FFFFFF' })
     .text(`•`, 265, yLine, {
       color: secondaryColor,
@@ -396,7 +396,7 @@ const createProfilePdf = async ({ userID, data }) => {
   yLine = 163
   lineSpacing = 21
   pdfDoc
-    .editPage(5) //ok
+    .editPage(5)
     .rectangle(427, yLine - 3, 300, 25, { fill: '#FFFFFF' })
     .text(
       secteurActiviteEnum[data?.secteurActivite] || 'Non renseigné',
@@ -566,31 +566,24 @@ const createEnjeuxPdf = async ({ userID, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/enjeux.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '11 to 17')
+  await merger.add(templatePath, '7 to 13')
   await merger.save(outputPath)
   const pdfDoc = await new HummusRecipe(outputPath, outputPath)
   pdfDoc
-    .editPage(3)
+    .editPage(3) // à compter de la page 7 qui est donc la 1ère page
+                 // on affiche la valo en haut à droite
     .rectangle(700, 50, 150, 50, { fill: '#FFFFFF' })
     .text(`${handleK(data?.valorisationSteGroupe || 0)}€`, 600, 50, {
       color: secondaryColor,
       size: 32,
-      textBox: {
+      textBox: { 
         textAlign: 'center center',
         width: 350,
         height: 50,
       },
     })
     .endPage()
-
-    /*
-    la pagination reprend à compter de la page 7 du template pdf suisse
-    cad Réflexion Patrimoniale 1 vos enjeux et 2 vos pistes de réflexions
-    */
-
-    //slide 16 du template FR : fiscalité liée à la cession
-    //ce slide est supprimé dans le template version Suisse car nous ne calculons pas la fiscalité
-    // .editPage(6)
+    // .editPage(6) // Attention slide fiscalité liée à la cession qui dans le cas de la CH N/A
     // .rectangle(770, 3, 190, 58, { fill: whiteColor })
     // .rectangle(843, 295, 80, 25, { fill: '#FFFFFF' })
     // .text(
@@ -664,12 +657,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     //   },
     // })
     // .endPage()
-
-    /*
-    ok la page 7 du template pdf CH est identique à celui du template FR
-    */
-    // confort de vie annuel souhaité
-    .editPage(7)
+    .editPage(7) //confort de vie annuel souhaité
     .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
     .text(`${handleK(data?.montantTrainDeVie || 0)}€ nets`, 203, 367, {
       color: secondaryColor,
@@ -690,22 +678,6 @@ const createEnjeuxPdf = async ({ userID, data }) => {
         height: 39,
       },
     })
-    // .rectangle(203, 367, 188, 38, { fill: '#576656' })
-    // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0}€ ²`,
-    //   203,
-    //   367,
-    //   {
-    //     color: secondaryColor,
-    //     size: 32,
-    //     textBox: {
-    //       textAlign: 'center center',
-    //       width: 188,
-    //       height: 38,
-    //       style: { lineWidth: 2 },
-    //     },
-    //   },
-    // )
     .endPage()
     .endPDF(() => {})
   return outputPath
@@ -715,42 +687,17 @@ const createObjectifPatPage = async ({ userID, piste }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/objectifPat.pdf`
   const merger = new PDFMerger()
-  /*
-  les pages 18 et 19 du template FR sont les pages 14 et 15 du template CH
-  Vos pistes de réflexion
-  + PLAN des pistes cad 4 pour la Suisse
-  */
-  await merger.add(templatePath, '14, 15') // 14 et 15 Vs 18 et 19
+  await merger.add(templatePath, '14, 15') // Vos pistes + Plan
   await merger.save(outputPath)
-  // const pdfDoc = await new HummusRecipe(outputPath, outputPath)
-  // pdfDoc
-  //   .editPage(2)
-  //   .rectangle(700, 50, 150, 50, { fill: '#FFFFFF' })
-  //   .text(`${0}€`, 600, 50, {
-  //     color: secondaryColor,
-  //     size: 32,
-  //     textBox: {
-  //       textAlign: 'center center',
-  //       width: 350,
-  //       height: 50,
-  //     },
-  //   })
-  //   .endPage()
-  //   .endPDF(() => {})
   return outputPath
 }
 const createPistePdf = async ({ userID, piste, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/piste.pdf`
   const merger = new PDFMerger()
-  /*
-  on assemble les 4 pistes de réflexion CH du template 
-  y compris les 2 dernières pages
-  cad le tout de 16 à 39
-  */
-  await merger.add(templatePath, '16 to 39') // 16 à 39 Vs 20 à 31
+  await merger.add(templatePath, '16 to 39') // les pistes de réflexion + + nom IP + quatrième de couverture 
   await merger.save(outputPath)
   return outputPath
 }
 
-module.exports = createDynamicPdfCH
+module.exports = createDynamicPdf
