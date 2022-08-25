@@ -24,7 +24,7 @@ const { paysEnum } = require('../enums')
 const { nationaliteEnum } = require('../enums')
 const imagePath = path.join(__dirname, '../static/images')
 
-const createDynamicPdf = async ({ userID, data, piste }) => {
+const createDynamicPdfCH = async ({ userID, data, piste }) => {
   try {
     const profilePdfPath = await createProfilePdf({ userID, data })
     const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
@@ -753,4 +753,4 @@ const createPistePdf = async ({ userID, piste, data }) => {
   return outputPath
 }
 
-module.exports = createDynamicPdf
+module.exports = createDynamicPdfCH
