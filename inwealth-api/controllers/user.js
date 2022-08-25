@@ -1,7 +1,7 @@
 // const User = require('../models/User');
 const { generatedFileName } = require('../config')
 
-const createDynamicPdf = require('../utils/createDynamicPdf')
+const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
 
 const db = require('../models')
 const fs = require('fs')
@@ -2016,7 +2016,7 @@ exports.getReflexPatFile = async (req, res) => {
     })
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
-    const generatedFilePath = await createDynamicPdf({
+    const generatedFilePath = await createDynamicPdfCH({
       userID: req.params.id,
       data: profil,
       piste,
