@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TemplateInwCh.pdf' // renommer le document TemplateInw Vs TempalteInw
+const templatePath = pdfDir + '/TempalteInw.pdf' // renommer le document TemplateInw Vs TempalteInw
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -129,9 +129,8 @@ const createProfilePdf = async ({ userID, data }) => {
     })
     .text(
       data?.changementResidence
-        ? `Vous envisagez un changement de résidence fiscale : ${
-            paysEnum[data?.changementResidence] || ''
-          }`
+        ? `Vous envisagez un changement de résidence fiscale : ${paysEnum[data?.changementResidence] || ''
+        }`
         : "Vous n'envisagez pas de changement de résidence fiscale",
       285,
       yLine,
@@ -158,9 +157,8 @@ const createProfilePdf = async ({ userID, data }) => {
     })
     .text(
       data?.elementEtranger
-        ? `Vous avez un lien d’extranéité dans votre situation : ${
-            paysEnum[data?.elementEtranger] || ''
-          }`
+        ? `Vous avez un lien d’extranéité dans votre situation : ${paysEnum[data?.elementEtranger] || ''
+        }`
         : "Vous n'avez pas de lien d’extranéité dans votre situation",
       285,
       yLine,
@@ -206,8 +204,7 @@ const createProfilePdf = async ({ userID, data }) => {
       },
     })
     .text(
-      `Votre situation familiale : ${
-        situationEnum[data?.situationFamille] || ''
+      `Votre situation familiale : ${situationEnum[data?.situationFamille] || ''
       }`,
       285,
       yLine,
@@ -234,9 +231,8 @@ const createProfilePdf = async ({ userID, data }) => {
     })
     .text(
       data?.regimeMatrimonial
-        ? `Votre régime matrimonial : ${
-            regimeMatrimonialEnum[data?.regimeMatrimonial] || ''
-          }`
+        ? `Votre régime matrimonial : ${regimeMatrimonialEnum[data?.regimeMatrimonial] || ''
+        }`
         : '',
       285,
       yLine,
@@ -262,8 +258,7 @@ const createProfilePdf = async ({ userID, data }) => {
       },
     })
     .text(
-      `Âge de votre "partenaire/conjoint/concubin" : ${
-        data?.ageConjoint || 0
+      `Âge de votre "partenaire/conjoint/concubin" : ${data?.ageConjoint || 0
       }`,
       285,
       yLine,
@@ -290,9 +285,8 @@ const createProfilePdf = async ({ userID, data }) => {
     })
     .text(
       data?.enfantMineur || data?.enfantMajeur
-        ? `Vous avez un/des enfant(s) : ${
-            data?.enfantMineur || 0
-          } mineurs(s), ${data?.enfantMajeur || 0} majeurs(s)`
+        ? `Vous avez un/des enfant(s) : ${data?.enfantMineur || 0
+        } mineurs(s), ${data?.enfantMajeur || 0} majeurs(s)`
         : "Vous n'avez pas d'enfant",
       285,
       yLine,
@@ -373,9 +367,8 @@ const createProfilePdf = async ({ userID, data }) => {
     })
     .text(
       data?.nbrePetitEnfant
-        ? `Vous avez un/des petit(s)-enfant(s) : ${
-            data?.nbrePetitEnfant || ''
-          }`
+        ? `Vous avez un/des petit(s)-enfant(s) : ${data?.nbrePetitEnfant || ''
+        }`
         : "Vous n'avez pas de petit(s)-enfant(s)",
       285,
       yLine,
@@ -393,92 +386,112 @@ const createProfilePdf = async ({ userID, data }) => {
 
   //Professionnelle
 
-  yLine = 163
-  lineSpacing = 21
   pdfDoc
     .editPage(5)
-    .rectangle(427, yLine - 3, 300, 25, { fill: '#FFFFFF' })
+    .rectangle(265, 160, 675, 200, { fill: '#FFFFFF' })
+    .text(`•`, 265, yLine, {
+      color: secondaryColor,
+      size: 12,
+      textBox: {
+        textAlign: 'left center',
+        width: 20,
+        height: 24,
+      },
+    })
     .text(
-      secteurActiviteEnum[data?.secteurActivite] || 'Non renseigné',
-      427,
+      `Votre secteur d'activité : ${secteurActiviteEnum[data?.secteurActivite] || 'Non renseigné'}`,
+      285,
       yLine,
       {
-        color: primaryColor,
+        color: '#2F2064',
         size: 12,
         textBox: {
           textAlign: 'left center',
-          width: 300,
-          height: 20,
+          width: 602,
+          height: 24,
         },
       },
     )
   yLine += lineSpacing
   pdfDoc
-    .rectangle(736, yLine, 200, 20, { fill: '#FFFFFF' })
-    .text(
-      typeSocieteEnum[data?.formeJuridique] || 'Non renseignée',
-      736,
-      yLine,
-      {
-        color: primaryColor,
-        size: 12,
-        textBox: {
-          textAlign: 'left center',
-          width: 200,
-          height: 20,
-        },
-      },
-    )
-  yLine += lineSpacing + 0.5
-  pdfDoc
-    .rectangle(667, yLine, 235, 20, { fill: '#FFFFFF' })
-    .text(data?.groupeOuiNon ? 'oui' : 'non', 667, yLine, {
-      color: primaryColor,
+    .text(`•`, 265, yLine, {
+      color: secondaryColor,
       size: 12,
       textBox: {
         textAlign: 'left center',
-        width: 235,
-        height: 20,
+        width: 20,
+        height: 24,
       },
     })
-  yLine += lineSpacing + 0.75
-  pdfDoc
-    .rectangle(480, yLine, 150, 20, { fill: '#FFFFFF' })
-    .text(`${data?.pourcentageDetention || 0}%`, 480, yLine, {
-      color: primaryColor,
-      size: 12,
-      textBox: {
-        textAlign: 'left center',
-        width: 150,
-        height: 20,
-      },
-    })
-  yLine += lineSpacing + 0.25
-  pdfDoc
-    .rectangle(525, yLine, 200, 20, { fill: '#FFFFFF' })
-    // .rectangle(525, yLine, 200, 20, { fill: '#576656' })
     .text(
-      `${
-        detentionImmoExploitationEnum[data?.immobilierExploitation] ||
-        'Non renseigné'
-      }`,
-      525,
+      `La forme juridique de la société dans laquelle vous détenez votre participation : ${typeSocieteEnum[data?.formeJuridique] || 'Non renseignée'}`,
+      285,
       yLine,
       {
-        color: primaryColor,
+        color: '#2F2064',
         size: 12,
         textBox: {
           textAlign: 'left center',
-          width: 200,
-          height: 20,
+          width: 602,
+          height: 24,
         },
       },
     )
+  yLine += lineSpacing
+  pdfDoc
+    .text(`•`, 265, yLine, {
+      color: secondaryColor,
+      size: 12,
+      textBox: {
+        textAlign: 'left center',
+        width: 20,
+        height: 24,
+      },
+    })
+    .text(
+      `Vous détenez votre participation au travers d'une société holding  : ${data?.groupeOuiNon ? 'oui' : 'non'}`,
+      285,
+      yLine,
+      {
+        color: '#2F2064',
+        size: 12,
+        textBox: {
+          textAlign: 'left center',
+          width: 602,
+          height: 24,
+        },
+      },
+    )
+  yLine += lineSpacing
+  pdfDoc
+    .text(`•`, 265, yLine, {
+      color: secondaryColor,
+      size: 12,
+      textBox: {
+        textAlign: 'left center',
+        width: 20,
+        height: 24,
+      },
+    })
+    .text(
+      `Vous détenez l'immobilier d'exploitation : ${detentionImmoExploitationEnum[data?.immobilierExploitation] ||
+      'Non renseigné'}`,
+      285,
+      yLine,
+      {
+        color: '#2F2064',
+        size: 12,
+        textBox: {
+          textAlign: 'left center',
+          width: 602,
+          height: 24,
+        },
+      },
+    )
+  yLine += lineSpacing
     .endPage()
 
-  yLine = 185
-  lineSpacing = 22
-
+    
   // Financiere
 
   pdfDoc
@@ -571,92 +584,91 @@ const createEnjeuxPdf = async ({ userID, data }) => {
   const pdfDoc = await new HummusRecipe(outputPath, outputPath)
   pdfDoc
     .editPage(3) // à compter de la page 7 qui est donc la 1ère page
-                 // on affiche la valo en haut à droite
     .rectangle(700, 50, 150, 50, { fill: '#FFFFFF' })
     .text(`${handleK(data?.valorisationSteGroupe || 0)}€`, 600, 50, {
       color: secondaryColor,
       size: 32,
-      textBox: { 
+      textBox: {
         textAlign: 'center center',
         width: 350,
         height: 50,
       },
     })
     .endPage()
-    // .editPage(6) // Attention slide fiscalité liée à la cession qui dans le cas de la CH N/A
-    // .rectangle(770, 3, 190, 58, { fill: whiteColor })
-    // .rectangle(843, 295, 80, 25, { fill: '#FFFFFF' })
-    // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 12.8) / 100) || 0}€`,
-    //   843,
-    //   295,
-    //   {
-    //     color: secondaryColor,
-    //     size: 18,
-    //     textBox: {
-    //       textAlign: 'left center',
-    //       width: 200,
-    //       height: 25,
-    //     },
-    //   },
-    // )
-    // .rectangle(842, 345, 80, 25, { fill: '#FFFFFF' })
-    // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 17.2) / 100) || 0}€`,
-    //   842,
-    //   345,
-    //   {
-    //     color: secondaryColor,
-    //     size: 18,
-    //     textBox: {
-    //       textAlign: 'left center',
-    //       width: 200,
-    //       height: 25,
-    //     },
-    //   },
-    // )
+    .editPage(6) // Attention slide fiscalité liée à la cession qui dans le cas de la CH N/A
+    .rectangle(770, 3, 190, 58, { fill: whiteColor })
+    .rectangle(843, 295, 80, 25, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 12.8) / 100) || 0}€`,
+      843,
+      295,
+      {
+        color: secondaryColor,
+        size: 18,
+        textBox: {
+          textAlign: 'left center',
+          width: 200,
+          height: 25,
+        },
+      },
+    )
+    .rectangle(842, 345, 80, 25, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 17.2) / 100) || 0}€`,
+      842,
+      345,
+      {
+        color: secondaryColor,
+        size: 18,
+        textBox: {
+          textAlign: 'left center',
+          width: 200,
+          height: 25,
+        },
+      },
+    )
 
-    // .rectangle(842, 394, 80, 25, { fill: '#FFFFFF' })
-    // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 4) / 100) || 0}€`,
-    //   842,
-    //   403,
-    //   {
-    //     color: primaryColor,
-    //     size: 18,
-    //     textBox: {
-    //       textAlign: 'left center',
-    //       width: 200,
-    //       height: 25,
-    //     },
-    //   },
-    // )
-    // .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
-    // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0}€ ²`,
-    //   203,
-    //   367,
-    //   {
-    //     color: secondaryColor,
-    //     size: 32,
-    //     textBox: {
-    //       textAlign: 'center center',
-    //       width: 188,
-    //       height: 38,
-    //     },
-    //   },
-    // )
-    // .rectangle(600, 102, 150, 20, { fill: '#FFFFFF' })
-    // .text(`${handleK(data?.valorisationSteGroupe || 0)}€`, 599, 105, {
-    //   color: secondaryColor,
-    //   size: 18,
-    //   textBox: {
-    //     textAlign: 'left center',
-    //     width: 155,
-    //     height: 20,
-    //   },
-    // })
-    // .endPage()
+    .rectangle(842, 394, 80, 25, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 4) / 100) || 0}€`,
+      842,
+      403,
+      {
+        color: primaryColor,
+        size: 18,
+        textBox: {
+          textAlign: 'left center',
+          width: 200,
+          height: 25,
+        },
+      },
+    )
+    .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0}€ ²`,
+      203,
+      367,
+      {
+        color: secondaryColor,
+        size: 32,
+        textBox: {
+          textAlign: 'center center',
+          width: 188,
+          height: 38,
+        },
+      },
+    )
+    .rectangle(600, 102, 150, 20, { fill: '#FFFFFF' })
+    .text(`${handleK(data?.valorisationSteGroupe || 0)}€`, 599, 105, {
+      color: secondaryColor,
+      size: 18,
+      textBox: {
+        textAlign: 'left center',
+        width: 155,
+        height: 20,
+      },
+    })
+    .endPage()
     .editPage(7) //confort de vie annuel souhaité
     .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
     .text(`${handleK(data?.montantTrainDeVie || 0)}€ nets`, 203, 367, {
@@ -679,7 +691,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
       },
     })
     .endPage()
-    .endPDF(() => {})
+    .endPDF(() => { })
   return outputPath
 }
 
@@ -687,7 +699,7 @@ const createObjectifPatPage = async ({ userID, piste }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/objectifPat.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '14, 15') // Vos pistes + Plan
+  await merger.add(templatePath, '18, 19') // Vos pistes + Plan
   await merger.save(outputPath)
   return outputPath
 }
@@ -695,7 +707,7 @@ const createPistePdf = async ({ userID, piste, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/piste.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '16 to 39') // les pistes de réflexion + + nom IP + quatrième de couverture 
+  await merger.add(templatePath, '20 to 33') // les pistes de réflexion + + nom IP + quatrième de couverture 
   await merger.save(outputPath)
   return outputPath
 }
