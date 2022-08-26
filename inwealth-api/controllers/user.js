@@ -1239,6 +1239,7 @@ exports.getChiffre = (req, res) => {
               data.montantTrainDeVie = finance.montantTrainDeVie
               data.revenuNetHorsImpot = finance.revenuNetHorsImpot
               data.chargeDontImpot = finance.chargeDontImpot
+              data.revenuNetImposable = finance.revenuNetImposable
               res.status(200).send(data)
             })
             .catch((err) => {
