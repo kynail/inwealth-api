@@ -735,7 +735,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
       },
     })
     pdfDoc
-    .rectangle(422, 392, 150, 20, { fill: primaryColor })
+    .rectangle(734, 354, 150, 30, { fill: primaryColor })
     .text(
       `${handleK(
         (data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0),
@@ -753,10 +753,10 @@ const createEnjeuxPdf = async ({ userID, data }) => {
         },
       },
     )
-    .rectangle(203, 120, 188, 38, { fill: '#FFFFFF' })
+    .rectangle(203, 140, 188, 38, { fill: '#FFFFFF' })
     .text(`${handleK(data?.montantTrainDeVie || 0) - ((data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))
     } 
-    CHF complement`, 203, 367, {
+    CHF complement`, 203, 140, {
       color: secondaryColor,
       size: 28,
       textBox: {
