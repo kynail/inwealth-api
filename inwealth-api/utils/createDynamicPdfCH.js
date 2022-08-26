@@ -750,10 +750,9 @@ const createEnjeuxPdf = async ({ userID, data }) => {
         },
       },
     )
-    .rectangle(195, 195, 188, 38, { fill: '#FFFFFF' })
+    .rectangle(195, 199, 188, 38, { fill: '#FFFFFF' })
     .text(`${handleK(((data?.montantTrainDeVie || 0) - ((data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))))
-    } 
-    CHF`, 195, 195, {
+    } CHF`, 190, 195, {
       color: secondaryColor,
       size: 28,
       textBox: {
