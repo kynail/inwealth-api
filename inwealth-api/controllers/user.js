@@ -16,6 +16,7 @@ const { pisteRegimeMat } = require('../pistes/pisteRegimeMat')
 const { pisteSituation } = require('../pistes/pisteSituation')
 const { pisteAssVie } = require('../pistes/pisteAssVie')
 const { France } = require('../models')
+const { profile } = require('console')
 const User = db.User
 const Finance = db.Finance
 const Professionnel = db.Professionnel
@@ -453,6 +454,7 @@ exports.profilUser = (req, res) => {
     .then((dataUser) => {
       const finance = {
         montantTrainDeVie: req.body.montantTrainDeVie,
+        wishedLifeStyle: req.body.wishedLifeStyle,
         revenuNetHorsImpot: req.body.revenuNetHorsImpot,
         chargeDontImpot: req.body.chargeDontImpot,
         revenuNetImposable: req.body.revenuNetImposable,
@@ -543,6 +545,7 @@ exports.updateProfilUser = (req, res) => {
           revenuNetImposable: req.body.revenuNetImposable,
           chargeDontImpot: req.body.chargeDontImpot,
           montantTrainDeVie: req.body.montantTrainDeVie,
+          wishedLifeStyle: req.body.wishedLifeStyle,
         }
         Finance.update(finance, { where: { userId: req.params.id } })
           .then((dataFinance) => {
@@ -800,6 +803,7 @@ exports.getAllInfoUser = (req, res) => {
               profil.ageConjoint = data.user.ageConjoint
               profil.niveauFortune = data.user.niveauFortune
               profil.montantTrainDeVie = finance.montantTrainDeVie
+              profil.wishedLifeStyle = req.body.wishedLifeStyle
               profil.revenuNetHorsImpot = finance.revenuNetHorsImpot
               profil.chargeDontImpot = finance.chargeDontImpot
               profil.revenuNetImposable = finance.revenuNetImposable
@@ -1237,6 +1241,7 @@ exports.getChiffre = (req, res) => {
               data.valorisationSteGroupe = dataUser.valorisationSteGroupe
               data.niveauFortune = dataUser.user.niveauFortune
               data.montantTrainDeVie = finance.montantTrainDeVie
+              data.wishedLifeStyle = req.body.wishedLifeStyle
               data.revenuNetHorsImpot = finance.revenuNetHorsImpot
               data.chargeDontImpot = finance.chargeDontImpot
               data.revenuNetImposable = finance.revenuNetImposable

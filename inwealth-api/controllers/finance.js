@@ -6,6 +6,7 @@ const Finance = db.Finance
 exports.situationFinanciere = (req, res) => {
   const finance = {
     montantTrainDeVie: req.body.montantTrainDeVie,
+    wishedLifeStyle: req.body.wishedLifeStyle,
     revenuNetHorsImpot: req.body.revenuNetHorsImpot,
     chargeDontImpot: req.body.chargeDontImpot,
     userId: req.params.id,

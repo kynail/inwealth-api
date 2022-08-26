@@ -24,5 +24,8 @@ module.exports = (sequelize) => {
       //$classUser.montantTrainVie
       type: DataTypes.INTEGER,
     },
+    wishedLifeStyle: {
+      type: DataTypes.INTEGER,
+    }
   })
 }

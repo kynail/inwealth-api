@@ -721,8 +721,32 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     //   },
     // })
     // .endPage()
+    pdfDoc
     .editPage(7) //confort de vie annuel souhaité
-    .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
+
+    .rectangle(421, 354, 150, 30, { fill: thirdColor })
+    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 421, 354, {
+      color: '#000000',
+      size: 12,
+      textBox: {
+        textAlign: 'center center',
+        width: 150,
+        height: 30,
+      },
+    })
+  pdfDoc
+    .rectangle(734, 354, 150, 30, { fill: thirdColor })
+    .text(`${handleK(data?.wishedLifeStyle || 0)} CHF`, 734, 354, {
+      color: '#000000',
+      size: 12,
+      textBox: {
+        textAlign: 'center center',
+        width: 150,
+        height: 30,
+      },
+    })
+
+    .rectangle(203, 120, 188, 38, { fill: '#FFFFFF' })
     .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 203, 367, {
       color: secondaryColor,
       size: 28,
@@ -732,16 +756,16 @@ const createEnjeuxPdf = async ({ userID, data }) => {
         height: 38,
       },
     })
-    .rectangle(305, 199, 106, 39, { fill: thirdColor })
-    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 305, 199, {
-      color: '#FFFFFF',
-      size: 14,
-      textBox: {
-        textAlign: 'center center',
-        width: 106,
-        height: 39,
-      },
-    })
+    // .rectangle(305, 199, 106, 39, { fill: thirdColor })
+    // .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 305, 199, {
+    //   color: '#FFFFFF',
+    //   size: 14,
+    //   textBox: {
+    //     textAlign: 'center center',
+    //     width: 106,
+    //     height: 39,
+    //   },
+    // })
     .endPage()
     .endPDF(() => { })
   return outputPath
