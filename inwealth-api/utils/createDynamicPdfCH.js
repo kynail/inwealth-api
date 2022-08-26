@@ -535,7 +535,7 @@ const createProfilePdf = async ({ userID, data }) => {
       },
     })
     .text(
-      `Valorisation de votre participation : ${handleK(data?.valorisationSteGroupe || 0)}€`,
+      `Valorisation de votre participation : ${handleK(data?.valorisationSteGroupe || 0)} CHF`,
       285,
       yLine,
       {
@@ -551,7 +551,7 @@ const createProfilePdf = async ({ userID, data }) => {
   yLine += lineSpacing
   pdfDoc
     .rectangle(421, 354, 150, 30, { fill: thirdColor })
-    .text(`${handleK(data?.chargeDontImpot || 0)}€`, 421, 354, {
+    .text(`${handleK(data?.chargeDontImpot || 0)} CHF`, 421, 354, {
       color: '#000000',
       size: 12,
       textBox: {
@@ -562,7 +562,7 @@ const createProfilePdf = async ({ userID, data }) => {
     })
   pdfDoc
     .rectangle(734, 354, 150, 30, { fill: thirdColor })
-    .text(`${handleK(data?.revenuNetHorsImpot || 0)}€`, 734, 354, {
+    .text(`${handleK(data?.revenuNetHorsImpot || 0)} CHF`, 734, 354, {
       color: '#000000',
       size: 12,
       textBox: {
@@ -576,7 +576,7 @@ const createProfilePdf = async ({ userID, data }) => {
     .text(
       `${handleK(
         (data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0),
-      )}€`,
+      )} CHF`,
       422,
       393,
       {
@@ -603,7 +603,7 @@ const createProfilePdf = async ({ userID, data }) => {
       },
     })
     .text(
-      `NB : Votre revenu net imposable : ${handleK(data?.revenuNetImposable || 0)}€`,
+      `NB : Votre revenu net imposable : ${handleK(data?.revenuNetImposable || 0)} CHF`,
       285,
       yLine,
       {
@@ -637,7 +637,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     .editPage(3) // à compter de la page 7 qui est donc la 1ère page
     // on affiche la valo en haut à droite
     .rectangle(700, 50, 200, 50, { fill: '#FFFFFF' })
-    .text(`${handleK(data?.valorisationSteGroupe || 0)}CHF`, 600, 50, {
+    .text(`${handleK(data?.valorisationSteGroupe || 0)} CHF`, 600, 50, {
       color: secondaryColor,
       size: 32,
       textBox: {
@@ -651,7 +651,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     // .rectangle(770, 3, 190, 58, { fill: whiteColor })
     // .rectangle(843, 295, 80, 25, { fill: '#FFFFFF' })
     // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 12.8) / 100) || 0}€`,
+    //   `${handleK((data?.valorisationSteGroupe * 12.8) / 100) || 0} CHF`,
     //   843,
     //   295,
     //   {
@@ -666,7 +666,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     // )
     // .rectangle(842, 345, 80, 25, { fill: '#FFFFFF' })
     // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 17.2) / 100) || 0}€`,
+    //   `${handleK((data?.valorisationSteGroupe * 17.2) / 100) || 0} CHF`,
     //   842,
     //   345,
     //   {
@@ -682,7 +682,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
 
     // .rectangle(842, 394, 80, 25, { fill: '#FFFFFF' })
     // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 4) / 100) || 0}€`,
+    //   `${handleK((data?.valorisationSteGroupe * 4) / 100) || 0} CHF`,
     //   842,
     //   403,
     //   {
@@ -697,7 +697,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     // )
     // .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
     // .text(
-    //   `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0}€ ²`,
+    //   `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0} CHF ²`,
     //   203,
     //   367,
     //   {
@@ -711,7 +711,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     //   },
     // )
     // .rectangle(600, 102, 150, 20, { fill: '#FFFFFF' })
-    // .text(`${handleK(data?.valorisationSteGroupe || 0)}€`, 599, 105, {
+    // .text(`${handleK(data?.valorisationSteGroupe || 0)} CHF`, 599, 105, {
     //   color: secondaryColor,
     //   size: 18,
     //   textBox: {
@@ -723,7 +723,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     // .endPage()
     .editPage(7) //confort de vie annuel souhaité
     .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
-    .text(`${handleK(data?.montantTrainDeVie || 0)}€ nets`, 203, 367, {
+    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF nets`, 203, 367, {
       color: secondaryColor,
       size: 32,
       textBox: {
@@ -733,7 +733,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
       },
     })
     .rectangle(305, 199, 106, 39, { fill: primaryColor })
-    .text(`${handleK(data?.montantTrainDeVie || 0)}€`, 305, 199, {
+    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 305, 199, {
       color: '#FFFFFF',
       size: 14,
       textBox: {

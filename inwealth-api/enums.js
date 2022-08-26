@@ -7,10 +7,10 @@ exports.residenceFiscaleEnum = {
 }
 
 exports.niveauFortuneEnum = {
-  entre2et5: 'entre 2 et 5 M€',
-  entre5et10: 'entre 5 et 10 M€',
-  entre10et20: 'entre 10 et 20 M€',
-  sup20: '> à 20 M€',
+  entre2et5: 'entre 2 et 5 M CHF',
+  entre5et10: 'entre 5 et 10 M CHF',
+  entre10et20: 'entre 10 et 20 M CHF',
+  sup20: '> à 20 M CHF',
 }
 
 exports.paysEnum = {
