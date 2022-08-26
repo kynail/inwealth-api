@@ -17,6 +17,7 @@ const { pisteSituation } = require('../pistes/pisteSituation')
 const { pisteAssVie } = require('../pistes/pisteAssVie')
 const { France } = require('../models')
 const { profile } = require('console')
+const pisteSansConditionCh = require('../pistes/pisteSansConditionCh')
 const User = db.User
 const Finance = db.Finance
 const Professionnel = db.Professionnel
@@ -38,6 +39,55 @@ const listePisteSansCondition = [
     false,
     false,
   ),
+
+  new pisteSansConditions(
+    'modeTransmissionCh',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'impotFortuneCh',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'momentVenteCh',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'valoriserCh',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+  ),
+
   new pisteSansConditions(
     'assuranceVie',
     '',
@@ -128,8 +178,10 @@ const listePisteSansCondition = [
     false,
     true,
   ),
+  
   // new pisteSansConditions("contratCapitalisation", "", true, true, true, true, false, true, false),
 ]
+
 
 const listePisteDonation = [
   new pisteDonation(
@@ -1302,6 +1354,9 @@ exports.listePiste = (req, res) => {
   const pisteHoldingPrioritaire = []
   const pisteHoldingNonPrioritaire = []
   const pistePetitsEnfantsExperte = []
+
+
+
 
   Professionnel.findOne({
     include: [
