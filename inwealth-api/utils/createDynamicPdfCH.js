@@ -725,7 +725,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     .editPage(7) //confort de vie annuel souhaité
 
     .rectangle(421, 354, 150, 30, { fill: thirdColor })
-    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF shouaité`, 421, 354, {
+    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 421, 354, {
       color: '#000000',
       size: 12,
       textBox: {
@@ -735,11 +735,11 @@ const createEnjeuxPdf = async ({ userID, data }) => {
       },
     })
     pdfDoc
-    .rectangle(734, 354, 150, 30, { fill: primaryColor })
+    .rectangle(734, 354, 150, 30, { fill: thirdColor })
     .text(
       `${handleK(
         (data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0),
-      )} CHF actuel`,
+      )} CHF`,
       422,
       393,
       {
@@ -753,10 +753,10 @@ const createEnjeuxPdf = async ({ userID, data }) => {
         },
       },
     )
-    .rectangle(203, 180, 188, 38, { fill: primaryColor })
-    .text(`${handleK(data?.montantTrainDeVie || 0) - ((data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))
+    .rectangle(203, 180, 188, 38, { fill: '#FFFFFF' })
+    .text(`${handleK(data?.montantTrainDeVie || 0 - ((data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0)))
     } 
-    CHF complement`, 203, 180, {
+    CHF`, 203, 180, {
       color: secondaryColor,
       size: 28,
       textBox: {
