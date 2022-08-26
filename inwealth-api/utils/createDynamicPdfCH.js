@@ -591,7 +591,7 @@ const createProfilePdf = async ({ userID, data }) => {
       },
     )
 
-  yLine += lineSpacing
+  // yLine += lineSpacing
   pdfDoc
     .text(`•`, 265, yLine, {
       color: secondaryColor,
