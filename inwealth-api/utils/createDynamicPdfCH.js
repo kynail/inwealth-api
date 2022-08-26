@@ -723,7 +723,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     // .endPage()
     .editPage(7) //confort de vie annuel souhaité
     .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
-    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF nets`, 203, 367, {
+    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 203, 367, {
       color: secondaryColor,
       size: 28,
       textBox: {
@@ -732,7 +732,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
         height: 38,
       },
     })
-    .rectangle(305, 199, 106, 39, { fill: primaryColor })
+    .rectangle(305, 199, 106, 39, { fill: thirdColor })
     .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 305, 199, {
       color: '#FFFFFF',
       size: 14,
