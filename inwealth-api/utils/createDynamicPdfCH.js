@@ -637,7 +637,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     .editPage(3) // à compter de la page 7 qui est donc la 1ère page
     // on affiche la valo en haut à droite
     .rectangle(700, 50, 200, 50, { fill: '#FFFFFF' })
-    .text(`${handleK(data?.valorisationSteGroupe || 0)}€`, 600, 50, {
+    .text(`${handleK(data?.valorisationSteGroupe || 0)}CHF`, 600, 50, {
       color: secondaryColor,
       size: 32,
       textBox: {
