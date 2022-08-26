@@ -21,6 +21,7 @@ const { typeSocieteEnum } = require('../enums')
 const { situationEnum } = require('../enums')
 const { regimeMatrimonialEnum } = require('../enums')
 const { paysEnum } = require('../enums')
+const { cantonEnum } = require('../enums')
 const { nationaliteEnum } = require('../enums')
 const imagePath = path.join(__dirname, '../static/images')
 
