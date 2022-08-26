@@ -743,7 +743,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
       422,
       393,
       {
-        color: '#FFFFFF',
+        color: '#000000',
         size: 12,
         textBox: {
           textAlign: 'center center',
