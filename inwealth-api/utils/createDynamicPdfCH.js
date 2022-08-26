@@ -498,6 +498,8 @@ const createProfilePdf = async ({ userID, data }) => {
   yLine = 185
   lineSpacing = 23
   pdfDoc
+  .editPage(6)
+  .rectangle(265, 160, 675, 200, { fill: '#FFFFFF' })
     .text(`•`, 265, yLine, {
       color: secondaryColor,
       size: 12,
