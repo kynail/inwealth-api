@@ -725,7 +725,7 @@ const createEnjeuxPdf = async ({ userID, data }) => {
     .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
     .text(`${handleK(data?.montantTrainDeVie || 0)} CHF nets`, 203, 367, {
       color: secondaryColor,
-      size: 32,
+      size: 28,
       textBox: {
         textAlign: 'center center',
         width: 188,
