@@ -93,6 +93,31 @@ const createProfilePdf = async ({ userID, data }) => {
     )
   yLine += lineSpacing
   pdfDoc
+  .text(`•`, 265, yLine, {
+    color: secondaryColor,
+    size: 12,
+    textBox: {
+      textAlign: 'left center',
+      width: 20,
+      height: 24,
+    },
+  })
+  .text(
+    `Canton : ${cantonEnum[data?.canton] || ''}`,
+    285,
+    yLine,
+    {
+      color: '#2F2064',
+      size: 12,
+      textBox: {
+        textAlign: 'left center',
+        width: 602,
+        height: 24,
+      },
+    },
+  )
+yLine += lineSpacing
+  pdfDoc
     .text(`•`, 265, yLine, {
       color: secondaryColor,
       size: 12,
@@ -117,6 +142,7 @@ const createProfilePdf = async ({ userID, data }) => {
       },
     )
   yLine += lineSpacing
+  
   pdfDoc
     .text(`•`, 265, yLine, {
       color: secondaryColor,
