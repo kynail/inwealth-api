@@ -486,6 +486,7 @@ exports.profilUser = (req, res) => {
     residenceFiscale: req.body.residenceFiscale,
     nationalite: req.body.nationalite,
     canton: req.body.canton,
+    enjeu: req.body.enjeu,
     changementResidence: req.body.changementResidence,
     situationFamille: req.body.situationFamille,
     regimeMatrimonial: req.body.regimeMatrimonial,
@@ -570,6 +571,7 @@ exports.updateProfilUser = (req, res) => {
     residenceFiscale: req.body.residenceFiscale,
     nationalite: req.body.nationalite,
     canton: req.body.canton,
+    enjeu: req.body.enjeu,
     changementResidence: req.body.changementResidence,
     situationFamille: req.body.situationFamille,
     regimeMatrimonial: req.body.regimeMatrimonial,
@@ -841,6 +843,7 @@ exports.getAllInfoUser = (req, res) => {
               profil.residenceFiscale = data.user.residenceFiscale
               profil.nationalite = data.user.nationalite
               profil.canton = data.user.canton
+              profil.enjeu = data.enjeu.enjeu
               profil.changementResidence = data.user.changementResidence
               profil.situationFamille = data.user.situationFamille
               profil.regimeMatrimonial = data.user.regimeMatrimonial

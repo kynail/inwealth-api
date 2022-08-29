@@ -11,6 +11,9 @@ module.exports = (sequelize, Sequelize) => {
     canton: {
       type: Sequelize.STRING,
     },
+    enjeu: {
+      type: Sequelize.STRING,
+    },
     nationalite: {
       //$classUser.residenceFiscale
       type: Sequelize.STRING,

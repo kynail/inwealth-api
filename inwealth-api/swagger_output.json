@@ -34,6 +34,9 @@
                 "canton": {
                   "exemple": "aaah"
                 },
+                "enjeu": {
+                  "exemple": "cederEntreprise"
+                },
                 "changementResidence": {
                   "example": "suisse"
                 },
