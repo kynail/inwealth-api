@@ -2197,6 +2197,7 @@ exports.getReflexPatFile = async (req, res) => {
     var generatedFilePath;
     if (data.nationalite === "france") {
       console.log("testest  ", data.nationalite)
+      
       generatedFilePath = await createDynamicPdfFR({
         userID: req.params.id,
         data: profil,
