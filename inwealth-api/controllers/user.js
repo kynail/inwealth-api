@@ -479,6 +479,116 @@ const listePisteAssVie = [
     true,
     false,
   ),
+
+
+
+  new pisteSansConditions(
+    'estateUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'financingUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'holdRealEstateUks',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'sciUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'giftSciUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+
+  new pisteSansConditions(
+    'taxesRatesUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+  new pisteSansConditions(
+    'inheritanceUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+  new pisteSansConditions(
+    'giftAndInheritanceUks',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+  new pisteSansConditions(
+    'costUk',
+    '',
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+  ),
+
+
+
 ]
 
 exports.profilUser = (req, res) => {
