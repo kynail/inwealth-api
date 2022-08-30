@@ -2170,7 +2170,7 @@ exports.getReflexPatFile = async (req, res) => {
     })
     const user = data?.dataValues?.user?.dataValues
     delete user.id
-    delete data?.dataValues?.user
+    // delete data?.dataValues?.user
     delete finance?.dataValues.createdAt
     delete finance?.dataValues.updatedAt
     delete finance?.dataValues.userId
