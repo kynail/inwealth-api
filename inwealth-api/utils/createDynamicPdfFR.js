@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TemplateInwCh.pdf' // renommer le document TemplateInw Vs TempalteInw
+const templatePath = pdfDir + '/TempalteInwCh.pdf' // renommer le document TemplateInw Vs TempalteInw
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')

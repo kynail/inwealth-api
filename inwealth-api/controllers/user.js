@@ -2,6 +2,8 @@
 const { generatedFileName } = require('../config')
 
 const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
+const createDynamicPdffr = require('../utils/createDynamicPdfFR')
+
 
 const db = require('../models')
 const fs = require('fs')
@@ -182,6 +184,7 @@ const listePisteSansCondition = [
     true,
     false,
   ),
+
   new pisteSansConditions(
     'costUk',
     '',
@@ -2191,11 +2194,21 @@ exports.getReflexPatFile = async (req, res) => {
     })
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
-    const generatedFilePath = await createDynamicPdfCH({
-      userID: req.params.id,
-      data: profil,
-      piste,
-    })
+    var generatedFilePath;
+    if (residenceFiscale === "france") {
+      generatedFilePath = await createDynamicPdfFR({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })
+    }
+    else {
+      generatedFilePath = await createDynamicPdfCH({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })
+    }
     if (!generatedFilePath) {
       res.status(500).send({
         message: 'Error while generating your document. please retry',
