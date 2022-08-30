@@ -1515,8 +1515,10 @@ exports.listePiste = (req, res) => {
                 ? (condition.conditionParcours = true)
                 : (condition.conditionParcours = false)
               data.user.residenceFiscale === 'france'
-                ? (condition.conditionResidence = true)
-                : (condition.conditionResidence = false)
+                ? (condition.conditionResidence = "france")
+                : data.user.residenceFiscale === 'Suisse' 
+                ? (condition.conditionResidence = "france")
+                : (condition.conditionResidence = "uk")
               data.detentionImmoExploitation === 'societe' ||
               data.detentionImmoExploitation === 'societeEtHorsSociete'
                 ? (condition.conditionImmoEntrepriseSociete = true)
