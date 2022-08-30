@@ -490,7 +490,7 @@ const listePisteAssVie = [
     true,
     true,
     true,
-    true,
+    false,
     false,
   ),
 
@@ -502,7 +502,7 @@ const listePisteAssVie = [
     true,
     true,
     true,
-    true,
+    false,
     false,
   ),
 
@@ -514,7 +514,7 @@ const listePisteAssVie = [
     true,
     true,
     true,
-    true,
+    false,
     false,
   ),
 
@@ -526,7 +526,7 @@ const listePisteAssVie = [
     true,
     true,
     true,
-    true,
+    false,
     false,
   ),
 
@@ -538,7 +538,7 @@ const listePisteAssVie = [
     true,
     true,
     true,
-    true,
+    false,
     false,
   ),
 
