@@ -2195,7 +2195,7 @@ exports.getReflexPatFile = async (req, res) => {
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
     var generatedFilePath;
-    if (residenceFiscale === "france") {
+    if (data.nationalite === "france") {
       generatedFilePath = await createDynamicPdfFR({
         userID: req.params.id,
         data: profil,
