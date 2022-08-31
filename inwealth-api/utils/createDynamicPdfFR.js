@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TempalteInwCh.pdf' // renommer le document TemplateInw Vs TempalteInw
+const templatePath = pdfDir + '/TempalteInwCh.pdf' 
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -25,7 +25,7 @@ const { cantonEnum } = require('../enums')
 const { nationaliteEnum } = require('../enums')
 const imagePath = path.join(__dirname, '../static/images')
 
-const createDynamicPdf = async ({ userID, data, piste }) => {
+const createDynamicPdf1 = async ({ userID, data, piste }) => {
   try {
     const profilePdfPath = await createProfilePdf({ userID, data })
     const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
@@ -820,4 +820,4 @@ const createPistePdf = async ({ userID, piste, data }) => {
   return outputPath
 }
 
-module.exports = createDynamicPdf
+module.exports = createDynamicPdf1

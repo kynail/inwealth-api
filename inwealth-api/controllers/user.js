@@ -2,7 +2,7 @@
 const { generatedFileName } = require('../config')
 
 const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
-const createDynamicPdffr = require('../utils/createDynamicPdfFR')
+const createDynamicPdfFR = require('../utils/createDynamicPdfFR')
 
 
 const db = require('../models')
