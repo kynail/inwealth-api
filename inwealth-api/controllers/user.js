@@ -2160,7 +2160,9 @@ exports.getReflexPatFile = async (req, res) => {
         },
       ],
     })
+    // const user = await User.findOne({
 
+    // })
     const finance = await Finance.findOne({
       where: { userId: req.params.id },
     })
@@ -2170,7 +2172,7 @@ exports.getReflexPatFile = async (req, res) => {
     })
     const user = data?.dataValues?.user?.dataValues
     delete user.id
-    // delete data?.dataValues?.user
+    delete data?.dataValues?.user
     delete finance?.dataValues.createdAt
     delete finance?.dataValues.updatedAt
     delete finance?.dataValues.userId
@@ -2195,8 +2197,8 @@ exports.getReflexPatFile = async (req, res) => {
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
     var generatedFilePath;
-    if (data.nationalite === "france") {
-      console.log("testest  ", data.nationalite)
+    if (user.residenceFiscale === "france") {
+      console.log("testest  ", user.residenceFiscale)
 
       generatedFilePath = await createDynamicPdfFR({
         userID: req.params.id,
@@ -2205,7 +2207,7 @@ exports.getReflexPatFile = async (req, res) => {
       })
     }
     else {
-      console.log("testest  ", data.nationalite)
+      console.log("testest  ", user.residenceFiscale)
       generatedFilePath = await createDynamicPdfCH({
         userID: req.params.id,
         data: profil,
