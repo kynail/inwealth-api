@@ -3,6 +3,7 @@ const { generatedFileName } = require('../config')
 
 const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
 const createDynamicPdfFR = require('../utils/createDynamicPdfFR')
+const createDynamicPdfUK = require('../utils/createDynamicPdfUK')
 
 
 const db = require('../models')
@@ -2206,13 +2207,20 @@ exports.getReflexPatFile = async (req, res) => {
         piste,
       })
     }
-    else {
+    else if (user.residenceFiscale === "suisse") {
       console.log("testest  ", user.residenceFiscale)
       generatedFilePath = await createDynamicPdfCH({
         userID: req.params.id,
         data: profil,
         piste,
       })
+    }
+    else {
+      generatedFilePath = await createDynamicPdfUK({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })      
     }
     if (!generatedFilePath) {
       res.status(500).send({
