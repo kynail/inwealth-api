@@ -512,7 +512,7 @@ const createObjectifPatPage = async ({ userID, piste }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   // const outputPath = `${outputDir}/objectifPat.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '7, 14') // Vos pistes + Plan
+  await merger.add(templatePath, '6, 13') // Vos pistes + Plan
   await merger.save(outputPath)
   return outputPath
 }
@@ -520,7 +520,7 @@ const createPistePdf = async ({ userID, piste, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   // const outputPath = `${outputDir}/piste.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '15 to 25') // les pistes de réflexion + + nom IP + quatrième de couverture 
+  await merger.add(templatePath, '7 to 24') // les pistes de réflexion + + nom IP + quatrième de couverture 
   await merger.save(outputPath)
   return outputPath
 }
