@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TempalteInwFr.pdf'
+const templatePath = pdfDir + '/TempalteInwUk.pdf'
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -28,14 +28,14 @@ const imagePath = path.join(__dirname, '../static/images')
 const createDynamicPdf1 = async ({ userID, data, piste }) => {
   try {
     const profilePdfPath = await createProfilePdf({ userID, data })
-    // const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
+    const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
     const objectifPdfPath = await createObjectifPatPage({ userID, piste })
     const pistePdfPath = await createPistePdf({ userID, piste, data })
     const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
     const outputPath = `${outputDir}/Reflexion patrimoniale.pdf`
     const merger = new PDFMerger()
     await merger.add(profilePdfPath)
-    // await merger.add(enjeuxPdfPath)
+    await merger.add(enjeuxPdfPath)
     await merger.add(objectifPdfPath)
     await merger.add(pistePdfPath)
     await merger.save(outputPath)
