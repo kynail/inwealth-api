@@ -510,6 +510,7 @@ const handleK = (value) => (value >= 1_000 ? `${value / 1_000} K` : `${value}`)
 //   return outputPath
 // }
 
+
 const createObjectifPatPage = async ({ userID, piste }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/objectifPat.pdf`

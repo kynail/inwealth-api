@@ -2216,7 +2216,7 @@ exports.getReflexPatFile = async (req, res) => {
       })
     }
     else {
-      generatedFilePath = await createDynamicPdfUK({
+      generatedFilePath = await createDynamicPdfUk({
         userID: req.params.id,
         data: profil,
         piste,
