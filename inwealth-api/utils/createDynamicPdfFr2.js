@@ -20,6 +20,7 @@ const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
 const templatePath = pdfDir + '/TempalteInwFrImmo.pdf' 
 
+
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
 const { detentionImmoExploitationEnum } = require('../enums')

@@ -4,6 +4,8 @@ const { generatedFileName } = require('../config')
 const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
 const createDynamicPdfFR = require('../utils/createDynamicPdfFR')
 const createDynamicPdfUK = require('../utils/createDynamicPdfUk')
+const createDynamicPdfFr = require('../utils/createDynamicPdfFr2')
+
 
 
 const db = require('../models')
@@ -2211,7 +2213,7 @@ exports.getReflexPatFile = async (req, res) => {
     if (user.residenceFiscale === "france" && parcours.typeParcours == "immoEnse") {
       console.log("testest  ", user.residenceFiscale)
 
-      generatedFilePath = await createDynamicPdfFR2({
+      generatedFilePath = await createDynamicPdfFr({
         userID: req.params.id,
         data: profil,
         piste,
