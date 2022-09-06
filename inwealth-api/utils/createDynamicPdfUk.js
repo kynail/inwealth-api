@@ -28,14 +28,14 @@ const imagePath = path.join(__dirname, '../static/images')
 const createDynamicPdf1 = async ({ userID, data, piste }) => {
   try {
     const profilePdfPath = await createProfilePdf({ userID, data })
-    // const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
+    const enjeuxPdfPath = await createEnjeuxPdf({ userID, data })
     const objectifPdfPath = await createObjectifPatPage({ userID, piste })
     const pistePdfPath = await createPistePdf({ userID, piste, data })
     const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
     const outputPath = `${outputDir}/Reflexion patrimoniale.pdf`
     const merger = new PDFMerger()
     await merger.add(profilePdfPath)
-    // await merger.add(enjeuxPdfPath)
+    await merger.add(enjeuxPdfPath)
     await merger.add(objectifPdfPath)
     await merger.add(pistePdfPath)
     await merger.save(outputPath)
@@ -354,159 +354,160 @@ const createProfilePdf = async ({ userID, data }) => {
   return outputPath
 }
 
+
 const handleK = (value) => (value >= 1_000 ? `${value / 1_000} K` : `${value}`)
 
-// const createEnjeuxPdf = async ({ userID, data }) => {
-//   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
-//   const outputPath = `${outputDir}/enjeux.pdf`
-//   const merger = new PDFMerger()
-//   await merger.add(templatePath, '7 to 13')
-//   await merger.save(outputPath)
-//   const pdfDoc = await new HummusRecipe(outputPath, outputPath)
-//   pdfDoc
-//     .editPage(3) // à compter de la page 7 qui est donc la 1ère page
-//     // on affiche la valo en haut à droite
-//     .rectangle(700, 50, 200, 50, { fill: '#FFFFFF' })
-//     .text(`${handleK(data?.valorisationSteGroupe || 0)} CHF`, 600, 50, {
-//       color: secondaryColor,
-//       size: 32,
-//       textBox: {
-//         textAlign: 'center center',
-//         width: 350,
-//         height: 50,
-//       },
-//     })
-//     .endPage()
-//     .editPage(6) // Attention slide fiscalité liée à la cession qui dans le cas de la CH N/A
-//     .rectangle(770, 3, 190, 58, { fill: whiteColor })
-//     .rectangle(843, 295, 80, 25, { fill: '#FFFFFF' })
-//     .text(
-//       `${handleK((data?.valorisationSteGroupe * 12.8) / 100) || 0} CHF`,
-//       843,
-//       295,
-//       {
-//         color: secondaryColor,
-//         size: 18,
-//         textBox: {
-//           textAlign: 'left center',
-//           width: 200,
-//           height: 25,
-//         },
-//       },
-//     )
-//     .rectangle(842, 345, 80, 25, { fill: '#FFFFFF' })
-//     .text(
-//       `${handleK((data?.valorisationSteGroupe * 17.2) / 100) || 0} CHF`,
-//       842,
-//       345,
-//       {
-//         color: secondaryColor,
-//         size: 18,
-//         textBox: {
-//           textAlign: 'left center',
-//           width: 200,
-//           height: 25,
-//         },
-//       },
-//     )
+const createEnjeuxPdf = async ({ userID, data }) => {
+  const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
+  const outputPath = `${outputDir}/enjeux.pdf`
+  const merger = new PDFMerger()
+  await merger.add(templatePath, '7 to 13')
+  await merger.save(outputPath)
+  const pdfDoc = await new HummusRecipe(outputPath, outputPath)
+  pdfDoc
+    .editPage(3) // à compter de la page 7 qui est donc la 1ère page
+    // on affiche la valo en haut à droite
+    .rectangle(700, 50, 200, 50, { fill: '#FFFFFF' })
+    .text(`${handleK(data?.valorisationSteGroupe || 0)} CHF`, 600, 50, {
+      color: secondaryColor,
+      size: 32,
+      textBox: {
+        textAlign: 'center center',
+        width: 350,
+        height: 50,
+      },
+    })
+    .endPage()
+    .editPage(6) // Attention slide fiscalité liée à la cession qui dans le cas de la CH N/A
+    .rectangle(770, 3, 190, 58, { fill: whiteColor })
+    .rectangle(843, 295, 80, 25, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 12.8) / 100) || 0} CHF`,
+      843,
+      295,
+      {
+        color: secondaryColor,
+        size: 18,
+        textBox: {
+          textAlign: 'left center',
+          width: 200,
+          height: 25,
+        },
+      },
+    )
+    .rectangle(842, 345, 80, 25, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 17.2) / 100) || 0} CHF`,
+      842,
+      345,
+      {
+        color: secondaryColor,
+        size: 18,
+        textBox: {
+          textAlign: 'left center',
+          width: 200,
+          height: 25,
+        },
+      },
+    )
 
-//     .rectangle(842, 394, 80, 25, { fill: '#FFFFFF' })
-//     .text(
-//       `${handleK((data?.valorisationSteGroupe * 4) / 100) || 0} CHF`,
-//       842,
-//       403,
-//       {
-//         color: primaryColor,
-//         size: 18,
-//         textBox: {
-//           textAlign: 'left center',
-//           width: 200,
-//           height: 25,
-//         },
-//       },
-//     )
-//     .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
-//     .text(
-//       `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0} CHF ²`,
-//       203,
-//       367,
-//       {
-//         color: secondaryColor,
-//         size: 32,
-//         textBox: {
-//           textAlign: 'center center',
-//           width: 188,
-//           height: 38,
-//         },
-//       },
-//     )
-//     .rectangle(600, 102, 150, 20, { fill: '#FFFFFF' })
-//     .text(`${handleK(data?.valorisationSteGroupe || 0)} CHF`, 599, 105, {
-//       color: secondaryColor,
-//       size: 18,
-//       textBox: {
-//         textAlign: 'left center',
-//         width: 155,
-//         height: 20,
-//       },
-//     })
-//     .endPage()
-//   pdfDoc
-//     .editPage(7) //confort de vie annuel souhaité
+    .rectangle(842, 394, 80, 25, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 4) / 100) || 0} CHF`,
+      842,
+      403,
+      {
+        color: primaryColor,
+        size: 18,
+        textBox: {
+          textAlign: 'left center',
+          width: 200,
+          height: 25,
+        },
+      },
+    )
+    .rectangle(203, 367, 188, 38, { fill: '#FFFFFF' })
+    .text(
+      `${handleK((data?.valorisationSteGroupe * 34) / 100) || 0} CHF ²`,
+      203,
+      367,
+      {
+        color: secondaryColor,
+        size: 32,
+        textBox: {
+          textAlign: 'center center',
+          width: 188,
+          height: 38,
+        },
+      },
+    )
+    .rectangle(600, 102, 150, 20, { fill: '#FFFFFF' })
+    .text(`${handleK(data?.valorisationSteGroupe || 0)} CHF`, 599, 105, {
+      color: secondaryColor,
+      size: 18,
+      textBox: {
+        textAlign: 'left center',
+        width: 155,
+        height: 20,
+      },
+    })
+    .endPage()
+  pdfDoc
+    .editPage(7) //confort de vie annuel souhaité
 
-//     .rectangle(421, 354, 150, 30, { fill: thirdColor })
-//     .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 421, 354, {
-//       color: '#000000',
-//       size: 12,
-//       textBox: {
-//         textAlign: 'center center',
-//         width: 150,
-//         height: 30,
-//       },
-//     })
-//   pdfDoc
-//     .rectangle(734, 354, 150, 30, { fill: thirdColor })
-//     .text(
-//       `${handleK(
-//         (data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))} CHF`, 734, 354,
-//       {
-//         color: '#000000',
-//         size: 12,
-//         textBox: {
-//           textAlign: 'center center',
-//           width: 150,
-//           height: 30,
-//           // style: { lineWidth: 2 },
-//         },
-//       },
-//     )
-//     .rectangle(194, 187, 188, 38, { fill: '#FFFFFF' })
-//     .text(`${handleK(((data?.montantTrainDeVie || 0) - ((data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))))
-//       } CHF`, 190, 187, {
-//       color: secondaryColor,
-//       size: 28,
-//       textBox: {
-//         textAlign: 'center center',
-//         width: 175,
-//         height: 35,
-//       },
-//     })
-//     // .rectangle(305, 199, 106, 39, { fill: thirdColor })
-//     // .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 305, 199, {
-//     //   color: '#FFFFFF',
-//     //   size: 14,
-//     //   textBox: {
-//     //     textAlign: 'center center',
-//     //     width: 106,
-//     //     height: 39,
-//     //   },
-//     // })
-//     .endPage()
+    .rectangle(421, 354, 150, 30, { fill: thirdColor })
+    .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 421, 354, {
+      color: '#000000',
+      size: 12,
+      textBox: {
+        textAlign: 'center center',
+        width: 150,
+        height: 30,
+      },
+    })
+  pdfDoc
+    .rectangle(734, 354, 150, 30, { fill: thirdColor })
+    .text(
+      `${handleK(
+        (data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))} CHF`, 734, 354,
+      {
+        color: '#000000',
+        size: 12,
+        textBox: {
+          textAlign: 'center center',
+          width: 150,
+          height: 30,
+          // style: { lineWidth: 2 },
+        },
+      },
+    )
+    .rectangle(194, 187, 188, 38, { fill: '#FFFFFF' })
+    .text(`${handleK(((data?.montantTrainDeVie || 0) - ((data?.revenuNetHorsImpot || 0) - (data?.chargeDontImpot || 0))))
+      } CHF`, 190, 187, {
+      color: secondaryColor,
+      size: 28,
+      textBox: {
+        textAlign: 'center center',
+        width: 175,
+        height: 35,
+      },
+    })
+    // .rectangle(305, 199, 106, 39, { fill: thirdColor })
+    // .text(`${handleK(data?.montantTrainDeVie || 0)} CHF`, 305, 199, {
+    //   color: '#FFFFFF',
+    //   size: 14,
+    //   textBox: {
+    //     textAlign: 'center center',
+    //     width: 106,
+    //     height: 39,
+    //   },
+    // })
+    .endPage()
 
 
-//     .endPDF(() => { })
-//   return outputPath
-// }
+    .endPDF(() => { })
+  return outputPath
+}
 
 const createObjectifPatPage = async ({ userID, piste }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
