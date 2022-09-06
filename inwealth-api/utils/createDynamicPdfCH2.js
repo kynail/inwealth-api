@@ -815,7 +815,7 @@ const createPistePdf = async ({ userID, piste, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/piste.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '16 to 39') // les pistes de réflexion + + nom IP + quatrième de couverture 
+  await merger.add(templatePath, '16 to 20') // les pistes de réflexion + + nom IP + quatrième de couverture 
   await merger.save(outputPath)
   return outputPath
 }
