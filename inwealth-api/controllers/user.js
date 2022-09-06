@@ -1519,7 +1519,7 @@ exports.listePiste = (req, res) => {
               parcours.typeParcours === 'cederEntrepriseCh' ||
               parcours.typeParcours === 'immoFrUk' ||
               parcours.typeParcours === 'immoEnse' ||
-              parcours.typeParcours === immoFrCh
+              parcours.typeParcours === 'immoFrCh'
                 ? (condition.conditionParcours = true)
                 : (condition.conditionParcours = false)
               data.user.residenceFiscale === 'france'
