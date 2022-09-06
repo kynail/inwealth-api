@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TempalteInwCh.pdf'
+const templatePath = pdfDir + '/TempalteInwImmoCh.pdf'
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -815,7 +815,7 @@ const createPistePdf = async ({ userID, piste, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
   const outputPath = `${outputDir}/piste.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '16 to 39') // les pistes de réflexion + + nom IP + quatrième de couverture 
+  await merger.add(templatePath, '16 to 19') // les pistes de réflexion + + nom IP + quatrième de couverture 
   await merger.save(outputPath)
   return outputPath
 }

@@ -5,6 +5,8 @@ const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
 const createDynamicPdfFR = require('../utils/createDynamicPdfFR')
 const createDynamicPdfUK = require('../utils/createDynamicPdfUk')
 const createDynamicPdfFr = require('../utils/createDynamicPdfFr2')
+const createDynamicPdfCH2 = require('../utils/createDynamicPdfCH2')
+
 
 
 
@@ -1516,7 +1518,8 @@ exports.listePiste = (req, res) => {
               parcours.typeParcours === 'cederEntreprise' ||
               parcours.typeParcours === 'cederEntrepriseCh' ||
               parcours.typeParcours === 'immoFrUk' ||
-              parcours.typeParcours === 'immoEnse'
+              parcours.typeParcours === 'immoEnse' ||
+              parcours.typeParcours === 'immoFrCh'
                 ? (condition.conditionParcours = true)
                 : (condition.conditionParcours = false)
               data.user.residenceFiscale === 'france'
@@ -2220,6 +2223,14 @@ exports.getReflexPatFile = async (req, res) => {
         piste,
       })
     }
+    else if (user.residenceFiscale === "suisse" && parcours.typeParcours == "immoFrCh") {
+      console.log("testest  ", user.residenceFiscale)
+      generatedFilePath = await createDynamicPdfCH2({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })
+    }   
     else if (user.residenceFiscale === "suisse") {
       console.log("testest  ", user.residenceFiscale)
       generatedFilePath = await createDynamicPdfCH({
