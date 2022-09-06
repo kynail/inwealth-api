@@ -12,7 +12,7 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TempalteInwFr.pdf'
+const templatePath = pdfDir + '/TempalteInwUk.pdf'
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -304,6 +304,7 @@ const createProfilePdf = async ({ userID, data }) => {
         },
       },
     )
+
   yLine += lineSpacing
   pdfDoc
     .rectangle(421, 354, 150, 30, { fill: thirdColor })
@@ -354,7 +355,8 @@ const createProfilePdf = async ({ userID, data }) => {
   return outputPath
 }
 
-// const handleK = (value) => (value >= 1_000 ? `${value / 1_000} K` : `${value}`)
+
+const handleK = (value) => (value >= 1_000 ? `${value / 1_000} K` : `${value}`)
 
 // const createEnjeuxPdf = async ({ userID, data }) => {
 //   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
@@ -508,9 +510,10 @@ const createProfilePdf = async ({ userID, data }) => {
 //   return outputPath
 // }
 
+
 const createObjectifPatPage = async ({ userID, piste }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
-  // const outputPath = `${outputDir}/objectifPat.pdf`
+  const outputPath = `${outputDir}/objectifPat.pdf`
   const merger = new PDFMerger()
   await merger.add(templatePath, '6, 13') // Vos pistes + Plan
   await merger.save(outputPath)
@@ -518,9 +521,9 @@ const createObjectifPatPage = async ({ userID, piste }) => {
 }
 const createPistePdf = async ({ userID, piste, data }) => {
   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)
-  // const outputPath = `${outputDir}/piste.pdf`
+  const outputPath = `${outputDir}/piste.pdf`
   const merger = new PDFMerger()
-  await merger.add(templatePath, '7 to 24') // les pistes de réflexion + + nom IP + quatrième de couverture 
+  await merger.add(templatePath, '14 to 24') // les pistes de réflexion + + nom IP + quatrième de couverture 
   await merger.save(outputPath)
   return outputPath
 }

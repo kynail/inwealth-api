@@ -3,6 +3,9 @@ const { generatedFileName } = require('../config')
 
 const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
 const createDynamicPdfFR = require('../utils/createDynamicPdfFR')
+const createDynamicPdfUK = require('../utils/createDynamicPdfUk')
+const createDynamicPdfFr = require('../utils/createDynamicPdfFr2')
+
 
 
 const db = require('../models')
@@ -2171,6 +2174,7 @@ exports.getReflexPatFile = async (req, res) => {
       where: { userId: req.params.id },
     })
     const user = data?.dataValues?.user?.dataValues
+    // const parcours = data?.dataValues?.parcours.dataValues;
     delete user.id
     delete data?.dataValues?.user
     delete finance?.dataValues.createdAt
@@ -2197,7 +2201,17 @@ exports.getReflexPatFile = async (req, res) => {
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
     var generatedFilePath;
-    if (user.residenceFiscale === "france") {
+
+    if (user.residenceFiscale === "france" && parcours.typeParcours == "immoEnse") {
+      console.log("testest  ", user.residenceFiscale)
+
+      generatedFilePath = await createDynamicPdfFr({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })
+    }
+    else if (user.residenceFiscale === "france") {
       console.log("testest  ", user.residenceFiscale)
 
       generatedFilePath = await createDynamicPdfFR({
@@ -2206,13 +2220,20 @@ exports.getReflexPatFile = async (req, res) => {
         piste,
       })
     }
-    else {
+    else if (user.residenceFiscale === "suisse") {
       console.log("testest  ", user.residenceFiscale)
       generatedFilePath = await createDynamicPdfCH({
         userID: req.params.id,
         data: profil,
         piste,
       })
+    }
+    else {
+      generatedFilePath = await createDynamicPdfUK({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })      
     }
     if (!generatedFilePath) {
       res.status(500).send({

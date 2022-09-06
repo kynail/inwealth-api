@@ -18,7 +18,8 @@ const HummusRecipe = require('hummus-recipe')
 const fs = require('fs')
 const path = require('path')
 const pdfDir = path.join(__dirname, `../static/pdf`)
-const templatePath = pdfDir + '/TempalteInwFr.pdf' 
+const templatePath = pdfDir + '/TempalteInwFrImmo.pdf' 
+
 
 const { niveauFortuneEnum } = require('../enums')
 const { secteurActiviteEnum } = require('../enums')
@@ -657,7 +658,7 @@ const createProfilePdf = async ({ userID, data }) => {
   return outputPath
 }
 
-// const handleK = (value) => (value >= 1_000 ? `${value / 1_000} K` : `${value}`)
+const handleK = (value) => (value >= 1_000 ? `${value / 1_000} K` : `${value}`)
 
 // const createEnjeuxPdf = async ({ userID, data }) => {
 //   const outputDir = path.join(__dirname, `../static/pdf/generated/${userID}`)

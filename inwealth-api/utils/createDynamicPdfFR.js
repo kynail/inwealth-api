@@ -12,7 +12,7 @@ Enjeu "Céder son entreprise"
 const {
   primaryColor,
   secondaryColor,
-  thirdColor,
+  thirdColor, 
   whiteColor,
   highlightColor,
 } = require('../config')
