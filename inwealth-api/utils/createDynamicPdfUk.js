@@ -304,6 +304,7 @@ const createProfilePdf = async ({ userID, data }) => {
         },
       },
     )
+    
   yLine += lineSpacing
   pdfDoc
     .rectangle(421, 354, 150, 30, { fill: thirdColor })
