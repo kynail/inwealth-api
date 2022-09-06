@@ -2172,6 +2172,7 @@ exports.getReflexPatFile = async (req, res) => {
       where: { userId: req.params.id },
     })
     const user = data?.dataValues?.user?.dataValues
+    // const parcours = data?.dataValues?.parcours.dataValues;
     delete user.id
     delete data?.dataValues?.user
     delete finance?.dataValues.createdAt
@@ -2198,10 +2199,19 @@ exports.getReflexPatFile = async (req, res) => {
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
     var generatedFilePath;
-    if (user.residenceFiscale === "france") {
+    if (user.residenceFiscale === "france" && parcours.typeParcours == "cederEntreprise") {
       console.log("testest  ", user.residenceFiscale)
 
       generatedFilePath = await createDynamicPdfFR({
+        userID: req.params.id,
+        data: profil,
+        piste,
+      })
+    }
+    if (user.residenceFiscale === "france" && parcours.typeParcours == "immoEnse") {
+      console.log("testest  ", user.residenceFiscale)
+
+      generatedFilePath = await createDynamicPdfFR2({
         userID: req.params.id,
         data: profil,
         piste,
