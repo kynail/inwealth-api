@@ -3,7 +3,7 @@ const { generatedFileName } = require('../config')
 
 const createDynamicPdfCH = require('../utils/createDynamicPdfCH')
 const createDynamicPdfFR = require('../utils/createDynamicPdfFR')
-const createDynamicPdfUK = require('../utils/createDynamicPdfUK')
+const createDynamicPdfUK = require('../utils/createDynamicPdfUk')
 
 
 const db = require('../models')
@@ -2216,7 +2216,7 @@ exports.getReflexPatFile = async (req, res) => {
       })
     }
     else {
-      generatedFilePath = await createDynamicPdfUk({
+      generatedFilePath = await createDynamicPdfUK({
         userID: req.params.id,
         data: profil,
         piste,
