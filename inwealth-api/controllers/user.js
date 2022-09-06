@@ -2201,19 +2201,20 @@ exports.getReflexPatFile = async (req, res) => {
     const piste = {}
     piste.pisteReflexion = JSON.parse(pisteData.pisteReflexion)
     var generatedFilePath;
-    if (user.residenceFiscale === "france" && parcours.typeParcours == "cederEntreprise") {
+
+    if (user.residenceFiscale === "france" && parcours.typeParcours == "immoEnse") {
       console.log("testest  ", user.residenceFiscale)
 
-      generatedFilePath = await createDynamicPdfFR({
+      generatedFilePath = await createDynamicPdfFr({
         userID: req.params.id,
         data: profil,
         piste,
       })
     }
-    if (user.residenceFiscale === "france" && parcours.typeParcours == "immoEnse") {
+    else if (user.residenceFiscale === "france") {
       console.log("testest  ", user.residenceFiscale)
 
-      generatedFilePath = await createDynamicPdfFr({
+      generatedFilePath = await createDynamicPdfFR({
         userID: req.params.id,
         data: profil,
         piste,
