@@ -647,7 +647,7 @@ const listePisteAssVie = [
     'separationBien',
     true,
     false,
-    true,
+    false,
     false,
   ),
   new pisteAssVie(
@@ -660,7 +660,7 @@ const listePisteAssVie = [
     null,
     true,
     false,
-    true,
+    false,
     false,
   ),
 
