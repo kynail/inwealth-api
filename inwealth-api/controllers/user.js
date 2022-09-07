@@ -118,6 +118,56 @@ const listePisteSansCondition = [
 
 
   new pisteSansConditions(
+    'ifFranceImmo',
+    '',
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+  ),
+
+  new pisteSansConditions(
+    'ifSuisseImmo',
+    '',
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+  ),
+
+  new pisteSansConditions(
+    'immoChCasUn',
+    '',
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+  ),
+
+  new pisteSansConditions(
+    'immoChCasDeux',
+    '',
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+  ),
+
+
+
+  new pisteSansConditions(
     'modeTransmissionCh',
     '',
     false,
