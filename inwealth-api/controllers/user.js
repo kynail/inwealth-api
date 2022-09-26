@@ -35,10 +35,11 @@ const Piste = db.Piste
 const listePisteSansCondition = [
   // new pisteSansConditions("lbo", "", true, true, true, true, false, false, true),
   // new pisteSansConditions("reductionCapitalSeule", "", true, true, true, true, false, false, true),
+  
   new pisteSansConditions(
     'ifiExoRedevable',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -49,7 +50,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'ifiExoRedevable2',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -60,7 +61,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'ifiAchatImmo',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -71,7 +72,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'achatImmoEnseUs',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -82,7 +83,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'achatImmoEnseParGroupe',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -93,7 +94,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'achatImmoEnseParDirigeant',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -107,7 +108,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'assuranceVieIr',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -116,11 +117,11 @@ const listePisteSansCondition = [
     false,
   ),
 
-
+ //suisse
   new pisteSansConditions(
     'ifFranceImmo',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -132,7 +133,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'ifSuisseImmo',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -144,7 +145,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'immoChCasUn',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -156,7 +157,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'immoChCasDeux',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -170,7 +171,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'modeTransmissionCh',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -182,7 +183,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'impotFortuneCh',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -194,7 +195,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'momentVenteCh',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -206,7 +207,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'valoriserCh',
     '',
-    false,
+    'suisse',
     true,
     true,
     true,
@@ -215,11 +216,11 @@ const listePisteSansCondition = [
     false,
   ),
 
-
+  //uk
   new pisteSansConditions(
     'estateUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -231,7 +232,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'financingUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -243,7 +244,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'holdRealEstateUks',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -255,7 +256,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'sciUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -267,7 +268,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'giftSciUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -279,7 +280,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'taxesRatesUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -290,7 +291,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'inheritanceUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -301,7 +302,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'giftAndInheritanceUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -313,7 +314,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'costUk',
     '',
-    false,
+    'uk',
     true,
     true,
     true,
@@ -322,10 +323,11 @@ const listePisteSansCondition = [
     false,
   ),
 
+   //fr
   new pisteSansConditions(
     'assuranceVie',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -336,7 +338,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'garantieActifPassif',
     '',
-    true,
+    'france',
     true,
     false,
     true,
@@ -347,7 +349,7 @@ const listePisteSansCondition = [
   new pisteSansConditions(
     'ipvFiscalite',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -355,12 +357,11 @@ const listePisteSansCondition = [
     false,
     false,
   ),
-  // new pisteSansConditions("creditVendeur", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions( "stePrestation", "", true, true,true, true, false, false, true),
+
   new pisteSansConditions(
     'nlleActivite',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -368,24 +369,11 @@ const listePisteSansCondition = [
     false,
     false,
   ),
-  // new pisteSansConditions("pea", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("fcpDedie", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("avancePat", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("contraCapi", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("adoptionSimple", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("prevoyanceDeces", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("mandatPosthume", "", true, true, true, true, false, false, true),
-  // pisteSansConditions(enumNamePisteFr.protectionFuture.rawValue, "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("testament", "", true, true, true, true, false,false, true),
-  // new pisteSansConditions("protectionFuture", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("acquiImmoUsNp", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions( "acquiImmoUsNpBailleur", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("acquiImmoLocSci", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("devPatImmo", "", true, true, true, true, false, false, true),
+
   new pisteSansConditions(
     'devPatImmoEndettement',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -393,18 +381,13 @@ const listePisteSansCondition = [
     false,
     true,
   ),
-  // new pisteSansConditions("monumentH", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("optionIsSc", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("leaseBack", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("acquiImmPro", "", true, true, true, true, false, false, true),
-  // new pisteSansConditions("apportSciIrSciIs", "", true, true, true, true, false, true, false),
-  // new pisteSansConditions("creditBail", "http://aidefr.visiopage.fr/#Vue_2", true, true, true, true, true,false, false),
+
 
   //cadre de gestion
   new pisteSansConditions(
     'fboImmo',
     '',
-    true,
+    'france',
     true,
     true,
     true,
@@ -412,6 +395,368 @@ const listePisteSansCondition = [
     false,
     true,
   ),
+
+
+
+
+  // new pisteSansConditions(
+  //   'ifiExoRedevable',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'ifiExoRedevable2',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'ifiAchatImmo',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),  
+  // new pisteSansConditions(
+  //   'achatImmoEnseUs',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'achatImmoEnseParGroupe',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'achatImmoEnseParDirigeant',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+
+
+  // new pisteSansConditions(
+  //   'assuranceVieIr',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+
+  // new pisteSansConditions(
+  //   'ifFranceImmo',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  //   true,
+  // ),
+
+  // new pisteSansConditions(
+  //   'ifSuisseImmo',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  //   true,
+  // ),
+
+  // new pisteSansConditions(
+  //   'immoChCasUn',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  //   true,
+  // ),
+
+  // new pisteSansConditions(
+  //   'immoChCasDeux',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  //   true,
+  // ),
+
+
+
+  // new pisteSansConditions(
+  //   'modeTransmissionCh',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'impotFortuneCh',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'momentVenteCh',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'valoriserCh',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+
+  // new pisteSansConditions(
+  //   'estateUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'financingUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'holdRealEstateUks',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'sciUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'giftSciUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'taxesRatesUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'inheritanceUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'giftAndInheritanceUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'costUk',
+  //   '',
+  //   false,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'assuranceVie',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'garantieActifPassif',
+  //   '',
+  //   true,
+  //   true,
+  //   false,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+  // new pisteSansConditions(
+  //   'ipvFiscalite',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'nlleActivite',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  // ),
+
+  // new pisteSansConditions(
+  //   'devPatImmoEndettement',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  //   true,
+  // ),
+
+
+  // //cadre de gestion
+  // new pisteSansConditions(
+  //   'fboImmo',
+  //   '',
+  //   true,
+  //   true,
+  //   true,
+  //   true,
+  //   false,
+  //   false,
+  //   true,
+  // ),
   
   // new pisteSansConditions("contratCapitalisation", "", true, true, true, true, false, true, false),
 ]
@@ -1642,9 +1987,21 @@ exports.listePiste = (req, res) => {
               parcours.typeParcours === 'immoFrCh'
                 ? (condition.conditionParcours = true)
                 : (condition.conditionParcours = false)
-              data.user.residenceFiscale === 'france'
-                ? (condition.conditionResidence = true)
-                : (condition.conditionResidence = false)
+
+
+
+              // data.user.residenceFiscale === 'france'
+              //   ? (condition.conditionResidence = true)
+              //   : (condition.conditionResidence = false)
+
+                data.user.residenceFiscale === 'france'
+                ? (condition.conditionResidence = 'france')
+                : data.user.residenceFiscale === 'uk' 
+                ? (condition.conditionResidence = 'uk')
+                : (condition.conditionResidence = 'suisse')
+
+
+
               data.detentionImmoExploitation === 'societe' ||
               data.detentionImmoExploitation === 'societeEtHorsSociete'
                 ? (condition.conditionImmoEntrepriseSociete = true)
