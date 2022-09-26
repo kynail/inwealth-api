@@ -35,16 +35,6 @@ const Piste = db.Piste
 const listePisteSansCondition = [
   // new pisteSansConditions("lbo", "", true, true, true, true, false, false, true),
   // new pisteSansConditions("reductionCapitalSeule", "", true, true, true, true, false, false, true),
-  
-  parcours.typeParcours === 'cederEntreprise'
-  ? (condition.conditionParcours = 'cederEntreprise')
-  : parcours.typeParcours === 'cederEntrepriseCh'
-    ? (condition.conditionParcours = 'cederEntrepriseCh')
-    : parcours.typeParcours === 'immoFrUk'
-      ? (condition.conditionParcours = 'immoFrUk')
-      : parcours.typeParcours === 'immoEnse'
-        ? (condition.conditionParcours = 'immoEnse')
-        : (condition.conditionParcours = 'immoFrCh')
 
   new pisteSansConditions(
     'ifiExoRedevable',
