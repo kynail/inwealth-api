@@ -36,11 +36,21 @@ const listePisteSansCondition = [
   // new pisteSansConditions("lbo", "", true, true, true, true, false, false, true),
   // new pisteSansConditions("reductionCapitalSeule", "", true, true, true, true, false, false, true),
   
+  parcours.typeParcours === 'cederEntreprise'
+  ? (condition.conditionParcours = 'cederEntreprise')
+  : parcours.typeParcours === 'cederEntrepriseCh'
+    ? (condition.conditionParcours = 'cederEntrepriseCh')
+    : parcours.typeParcours === 'immoFrUk'
+      ? (condition.conditionParcours = 'immoFrUk')
+      : parcours.typeParcours === 'immoEnse'
+        ? (condition.conditionParcours = 'immoEnse')
+        : (condition.conditionParcours = 'immoFrCh')
+
   new pisteSansConditions(
     'ifiExoRedevable',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     false,
@@ -51,7 +61,7 @@ const listePisteSansCondition = [
     'ifiExoRedevable2',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     false,
@@ -62,7 +72,7 @@ const listePisteSansCondition = [
     'ifiAchatImmo',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     false,
@@ -73,7 +83,7 @@ const listePisteSansCondition = [
     'achatImmoEnseUs',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     false,
@@ -84,7 +94,7 @@ const listePisteSansCondition = [
     'achatImmoEnseParGroupe',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     false,
@@ -95,7 +105,7 @@ const listePisteSansCondition = [
     'achatImmoEnseParDirigeant',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     false,
@@ -109,7 +119,7 @@ const listePisteSansCondition = [
     'assuranceVieIr',
     '',
     'france',
-    true,
+    'immoEnse',
     true,
     true,
     true,
@@ -122,7 +132,7 @@ const listePisteSansCondition = [
     'ifFranceImmo',
     '',
     'suisse',
-    true,
+    'cederEntrepriseCh',
     true,
     true,
     false,
@@ -134,7 +144,7 @@ const listePisteSansCondition = [
     'ifSuisseImmo',
     '',
     'suisse',
-    true,
+    'cederEntrepriseCh',
     true,
     true,
     false,
@@ -146,7 +156,7 @@ const listePisteSansCondition = [
     'immoChCasUn',
     '',
     'suisse',
-    true,
+    'cederEntrepriseCh',
     true,
     true,
     false,
@@ -158,7 +168,7 @@ const listePisteSansCondition = [
     'immoChCasDeux',
     '',
     'suisse',
-    true,
+    'cederEntrepriseCh',
     true,
     true,
     false,
@@ -172,7 +182,7 @@ const listePisteSansCondition = [
     'modeTransmissionCh',
     '',
     'suisse',
-    true,
+    'immoFrCh',
     true,
     true,
     true,
@@ -184,7 +194,7 @@ const listePisteSansCondition = [
     'impotFortuneCh',
     '',
     'suisse',
-    true,
+    'immoFrCh',
     true,
     true,
     true,
@@ -196,7 +206,7 @@ const listePisteSansCondition = [
     'momentVenteCh',
     '',
     'suisse',
-    true,
+    'immoFrCh',
     true,
     true,
     true,
@@ -208,7 +218,7 @@ const listePisteSansCondition = [
     'valoriserCh',
     '',
     'suisse',
-    true,
+    'immoFrCh',
     true,
     true,
     true,
@@ -221,7 +231,7 @@ const listePisteSansCondition = [
     'estateUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -233,7 +243,7 @@ const listePisteSansCondition = [
     'financingUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -245,7 +255,7 @@ const listePisteSansCondition = [
     'holdRealEstateUks',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -257,7 +267,7 @@ const listePisteSansCondition = [
     'sciUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -269,7 +279,7 @@ const listePisteSansCondition = [
     'giftSciUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -281,7 +291,7 @@ const listePisteSansCondition = [
     'taxesRatesUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -292,7 +302,7 @@ const listePisteSansCondition = [
     'inheritanceUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -303,7 +313,7 @@ const listePisteSansCondition = [
     'giftAndInheritanceUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -315,7 +325,7 @@ const listePisteSansCondition = [
     'costUk',
     '',
     'uk',
-    true,
+    'immoFrUk',
     true,
     true,
     false,
@@ -328,7 +338,7 @@ const listePisteSansCondition = [
     'assuranceVie',
     '',
     'france',
-    true,
+    'cederEntreprise',
     true,
     true,
     true,
@@ -339,7 +349,7 @@ const listePisteSansCondition = [
     'garantieActifPassif',
     '',
     'france',
-    true,
+    'cederEntreprise',
     false,
     true,
     true,
@@ -350,7 +360,7 @@ const listePisteSansCondition = [
     'ipvFiscalite',
     '',
     'france',
-    true,
+    'cederEntreprise',
     true,
     true,
     true,
@@ -362,7 +372,7 @@ const listePisteSansCondition = [
     'nlleActivite',
     '',
     'france',
-    true,
+    'cederEntreprise',
     true,
     true,
     true,
@@ -374,7 +384,7 @@ const listePisteSansCondition = [
     'devPatImmoEndettement',
     '',
     'france',
-    true,
+    'cederEntreprise',
     true,
     true,
     false,
@@ -388,7 +398,7 @@ const listePisteSansCondition = [
     'fboImmo',
     '',
     'france',
-    true,
+    'cederEntreprise',
     true,
     true,
     false,
@@ -1980,19 +1990,35 @@ exports.listePiste = (req, res) => {
               data.detentionImmoExploitation != ''
                 ? (condition.immoExploitation = true)
                 : (condition.immoExploitation = false)
-              parcours.typeParcours === 'cederEntreprise' ||
-              parcours.typeParcours === 'cederEntrepriseCh' ||
-              parcours.typeParcours === 'immoFrUk' ||
-              parcours.typeParcours === 'immoEnse' ||
-              parcours.typeParcours === 'immoFrCh'
-                ? (condition.conditionParcours = true)
-                : (condition.conditionParcours = false)
 
 
+
+
+              // parcours.typeParcours === 'cederEntreprise' ||
+              // parcours.typeParcours === 'cederEntreprise' ||
+              // parcours.typeParcours === 'immoFrUk' ||
+              // parcours.typeParcours === 'immoEnse' ||
+              // parcours.typeParcours === 'immoFrCh'
+              //   ? (condition.conditionParcours = true)
+              //   : (condition.conditionParcours = false)
 
               // data.user.residenceFiscale === 'france'
               //   ? (condition.conditionResidence = true)
               //   : (condition.conditionResidence = false)
+
+
+              parcours.typeParcours === 'cederEntreprise'
+              ? (condition.conditionParcours = 'cederEntreprise')
+              : parcours.typeParcours === 'cederEntrepriseCh'
+                ? (condition.conditionParcours = 'cederEntrepriseCh')
+                : parcours.typeParcours === 'immoFrUk'
+                  ? (condition.conditionParcours = 'immoFrUk')
+                  : parcours.typeParcours === 'immoEnse'
+                    ? (condition.conditionParcours = 'immoEnse')
+                    : (condition.conditionParcours = 'immoFrCh')
+
+
+
 
                 data.user.residenceFiscale === 'france'
                 ? (condition.conditionResidence = 'france')
